@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function doAjaxCall(the_request)
+        {
+            var request = null;
+            if(window.XMLHttpRequest)
+            {
+                request = new XMLHttpRequest();
+            }else if(window.ActiveXObject)
+            {
+                request = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            
+            if(request){
+                request.open("GET",the_request);
+                request.onreadystatechange = function (){
+                    if(request.readyState == 4){
+                        document.getElementById("resultDiv").innerHTML = "All done!";
+                    }
+                }
+                request.send(null);
+            }else{
+                alert("Sorry, you must update your browser before seeing Ajax in action.");
+            }
+        }
+    </script>
+    </head>
+<body>
+    <form>
+        <input type="button" value="Make Ajax Request" onclick="doAjaxCall('sample.txt'); return true;">
+    </form>
+<div id="resultDiv"></div>
+</body>
+</html>

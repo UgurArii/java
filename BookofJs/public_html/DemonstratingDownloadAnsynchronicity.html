@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Demonstrating Ansynchronicity</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function demoAsync(){
+            var now = new Date();
+            downloadFile("longWait",now);
+            dodownloadFile("shortWait",now);
+        }
+        
+        function downloadFile(the_request, start_time)
+        {
+            var request = null;
+            
+            if(window.XMLHttpRequest){
+                request = new XMLHttpRequest();
+            }else if(window.ActiveXObject){
+                request = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            
+            if(request){
+                request.open("GET", "http://localhost/boj/" + the_request +
+".php");
+            request.onreadystatechange = function(){
+                if (request.readyState == 4) {
+                document.getElementById("resultDiv").innerHTML += "File" +the_request +" was downloaded in" + getExpiredTime(start_time) + " seconds<br>";
+            }
+            }
+            request.send(null)
+            
+        }else{
+            alert("Sorry, you must update your browser before seeing" +
+" Ajax in action.");
+        }
+    }
+    
+    function getExpiredTime(start_time){
+        var then = start_time.getTime();
+        var now = new Date();
+        var now_time = now.getTime();
+        var diff = (now_time - then)/1000;
+        return diff;
+    }
+    </script>
+</head>
+<body>
+    <form><input type="button"
+                 onclick ="demoAsync(); return true;" value="Start downloading">
+        
+    </form>
+<div id="resultDiv"></div>
+</body>
+</html>

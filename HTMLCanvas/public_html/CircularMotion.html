@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+        window.onload = function ()
+        {
+            canvasBall = document.getElementById("canvasBall");
+            contextBall = canvasBall.getContext("2d");
+            canvasBG = document.getElementById("canvasBackground");
+            
+            contextBG = canvasBG.getContext("2d");
+            
+            var xPos = canvasBall.width/2; var change = 20;
+            var yPos = canvasBall.height/2; var interval = 50;
+            var count = 0; var max = 100;
+            var radius = 90;
+            contextBG.fillStyle = "deeppink";
+            contextBG.fillRect(0, 0, canvasBG.width, canvasBG.height);
+            
+            var ball = new Image();
+            ball.src = "http://marketimpacts.com/storage/SilverBall50px.png";
+            // B. LOAD IMAGE of ball.
+            
+            ball.onload = function (){
+                contextBall.translate(xPos, yPos);
+                
+                var intervalID = setInterval(drawBall, interval);
+                
+                function drawBall(){
+                    // C1. CLEAR Canvas for each ball image.
+            // Note: Comment out to see all images.
+            contextBall.clearRect(-canvasBall.width/2, -canvasBall.height/2,
+            canvasBall.width, canvasBall.height);
+            // C2. STOP if reached end.
+            count += 1;
+            if(count > max) {clearInterval(intervalID)};
+            // C3. ROTATE image.
+            contextBall.rotate(((Math.PI)/180)*change);
+            // C4. DRAW image.
+            contextBall.drawImage(ball,radius,0);
+                }
+                
+            }
+            
+        }
+    </script>
+    </head>
+<body>
+<div>
+    <canvas id = "canvasBall" width = "200" height ="200"
+style = "border:2px solid black; position:absolute;
+left:auto; top:auto; z-index: 2">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas>
+<canvas id = "canvasBackground" width = "200" height ="200"
+style = "border:2px solid black; position:absolute;
+left:auto; top:auto; z-index: 1">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas>
+</div>
+</body>
+</html>

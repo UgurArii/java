@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+    window.onload = function(){
+        canvas = document.getElementById("canvasArea");
+        context = canvas.getContext("2d");
+        
+        var ball = new Image();
+        smallImage.src = "http://marketimpacts.com/storage/SilverBall100px.png";
+        var ballXPos = 75;
+        var ballYPos = 15;
+        var ballWidth = 90;
+        var ballHeight = 90;
+        
+        var reflectAdj = 3.5;
+        var reflectAlpha = .4;
+        var reflectY = (2*ballYPos) + (2*(ballHeight-reflectAdj));
+        
+        var gradLv = context.createLinearGradient(0, 0, 0, canvas.height);
+        
+        ball.onload = function(){
+            gradLv.addColorStop(0, "lightskyblue");
+            gradLv.addColorStop(.3, "orange");
+            gradLv.addColorStop(1, "blue");
+            
+            context.fillStyle = gragradLv;
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            
+            context.drawImage(ball, ballXPos, ballYPos, ballWidth, ballHeight);
+            context.translate(0, reflectY);
+            
+            context.scale(1,-1);
+            
+            context.globalAlpha = reflectAlpha;
+            context.drawImage(ball, ballXPos, ballYPos, ballWidth, ballHeight);
+            
+            
+            
+        }
+    }
+</script>
+</head>
+<body>
+<div style = "width:400px; height:210px; margin:0 auto; padding:5px;">
+<canvas id = "canvasArea" width = "400" height ="210"
+style = "border:2px solid black">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas> </div>
+</body>
+</html>

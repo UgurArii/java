@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        windows.onload = function ()
+        {
+            canvas = document.getElementById("canvasArea");
+            context = canvas.getContext("2d");
+            
+            var xPos = 20;
+            var yPos = 20;
+            var width = 100;
+            var height = 50;
+            
+            context.fillStyle = "hotpink";
+            context.fillRect = (xPos, yPos, width, height);
+            context.lineWidth = 4;
+            context.strokeStyle = "royalblue";
+            context.strokeRect(xPos+130, yPos, width, height);
+            context.fillStyle = "darkorange";
+            context.fillRect(xPos+260, yPos, width, height);
+            context.clearRect(xPos+285, yPos+10, width-50, height-20);
+           
+        }
+    </script>
+</head>
+<body>
+<div style="width: 400px; height: 90px; margin: 0 auto; padding: 5px;">
+    <canvas id="canvasArea" width = "400" height = "90" style = "border:2px solid black">
+       Your browser doesn’t currently support HTML5 Canvas. 
+    </canvas>
+</div>
+</body>
+</html>

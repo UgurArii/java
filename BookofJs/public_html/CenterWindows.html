@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        var window_height = 200;
+        var window_width = 200;
+        
+        window.resizeTo(window_height, window_height);
+        var height = window.screen.availHeight;
+        var width = window.screen.availWidth;
+        
+        var leftt_point = parseInt(width/2) - parseInt(window_width/2);
+        
+        var top_point = parseInt(height/2) - parseInt(window_height/2);
+        
+        window.moveTo(leftt_point, top_point);
+    </script>
+</head>
+<body>
+    <h1>Hi!</h1>
+    <a href = "#"
+onClick = "if ((parseInt(navigator.appVersion) > 3) &&
+(navigator.appName == 'Netscape')) {
+var the_window =
+window.open('http://www.nostarch.com/',
+'the_window','height=200,width=200');
+var screen_height = window.screen.availHeight;
+var screen_width = window.screen.availWidth;
+var left_point = parseInt(screen_width / 2) - 100;
+var top_point = parseInt(screen_height / 2) - 100;
+the_window.moveTo(left_point, top_point);
+} return false;">Click me to open a small centered window</a>
+</body>
+</html>-->
+
+<html>
+<head>
+<title>Getting Centered</title>
+<script type = "text/javascript">
+<!-- hide me from older browsers
+function openAndCenterWindow()
+{
+if ((parseInt(navigator.appVersion) > 3) &&
+(navigator.appName == "Netscape")) {
+var the_window =
+window.open('http://www.nostarch.com/',
+'the_window','height=200,width=200');
+var screen_height = window.screen.availHeight;
+var screen_width = window.screen.availWidth;
+var left_point = parseInt(screen_width / 2) - 100;
+var top_point = parseInt(screen_height / 2) - 100;
+the_window.moveTo(left_point, top_point);
+}
+}
+// show me -->
+</script>
+</head>
+<body>
+􀁘 <a href = "#" onClick =
+"openAndCenterWindow(); return false;">Click me to open a small
+centered window</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+    function checkEmail(the_email)
+    {
+        var the_at = the_email.indexOf("@");
+        var the_dot = the_email.lastIndexOf(".");
+        var a_space = the_email.indexOf(" ");
+        
+        if((the_at != -1) && (the_at !=0) && (the_dot !=-1)
+        && (the_dot > the_at +1 ) && (the_dot < the_email.lenght-1)
+        && (a_space == -1)){
+            alert("Looks good to me!");
+            return true;
+        }else{
+            alert("Sorry, your email address is invalid!");
+            return false;
+        }
+    }
+    </script>
+    </head>
+<body>
+    <form method="POST" action="" onsubmit="var result=checkEmail(this.emailbox.value); return result;">
+        Email Address:<input type="text" name="emailbox"><br>
+            <input type="submit" value="Submit me!">
+    </form> 
+</body>
+</html>

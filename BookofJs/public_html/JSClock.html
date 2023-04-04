@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+    var the_timeout;
+    function writeTime() {
+        var today = new Date();
+    // ask the object for some information
+    var hours = today.getHours();
+    var minutes = today.getMinutes();
+    var seconds = today.getSeconds();
+    // make the minutes and seconds look right
+
+    minutes = fixTime(minutes);
+    seconds = fixTime(seconds);
+    // put together the time string and write it out
+
+    var the_time = hours + ":" + minutes + ":" + seconds;
+    window.document.the_form.the_text.value = the_time;
+    // run this function again in a second
+    the_timeout = setTimeout('writeTime();',1000);
+    }
+    
+    function fixTime(the_time) {
+    if (the_time < 10)
+    {
+    the_time = "0" + the_time;
+    }
+    return the_time;
+    }
+    //
+    </script>
+</head>
+<body>
+   The time is now:
+    <form name = "the_form">
+    <input type = "text" name = "the_text">
+    <input type = "button" value = "Start the Clock" onclick = "writeTime();">
+    <input type = "button" value = "Stop the Clock"
+    onclick = "clearTimeout(the_timeout);">
+    </form>
+</body>
+</html>

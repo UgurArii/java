@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function makeBig(theSpan)
+        {
+            var spanText = theSpan.innerHTML;
+            var newText = "<font size='+3'>" + spanText +"</font>";
+            theSpan.innerHTML = newText;
+        }
+        
+        function countBig(correctNumber){
+            var theSpans = document.getElementsByTagName("span");
+            var count = 0;
+            
+            for(var loop = 0; loop < theSpans.length; loop++)
+            {
+            if ((theSpans[loop].innerHTML.indexOf("FONT") != -1) ||
+(theSpans[loop].innerHTML.indexOf("font") != -1)) {    
+      count++;
+                }
+            }
+            if(count == correctNumber)
+            {
+                alert("Congratulations! You got all " + correctNumber+ " of them");
+            }else{
+                var missed = correctNumber - count;
+                alert("Not yet.. there are still" + missed + " left.");
+            }
+        }
+    </script>
+    </head>
+<body>
+    <h1>Click every F you see below.</h1>
+    <div style="width: 200; height: 100">
+       <span onClick = "makeBig(this); return false;">F</span>INISHED <span
+        onClick = "makeBig(this); return false;">F</span>ILES ARE THE RESULT O<span
+        onClick = "makeBig(this); return false;">F</span> YEARS O<span
+        onClick = "makeBig(this); return false;">F</span> SCIENTI<span
+        onClick = "makeBig(this); return false;">F</span>IC STUDY COMBINED WITH THE
+        EXPERIENCE O<span onClick = "makeBig(this); return false;">F</span> YEARS.
+    </div>
+<a href="#" onclick="countBig(6); return false">I am done!</a>
+</body>
+</html>

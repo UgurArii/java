@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function changeFrames(new_image, new_words)
+        {
+            parent.image_frame.document.the_image.src=new_image;
+            parent.form_frame.document.the_form.the_name.value = new_words;
+        }
+    </script>
+    </head>
+<body>
+    <a href = "#"
+onClick = "changeFrames('apple.gif','apple'); return false;">manzana</a>
+<br>
+<a href = "#"
+onClick = "changeFrames('orange.gif','orange'); return false;">naranja</a>
+</body>
+</html>

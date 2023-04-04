@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+    function changeContents(the_url)
+    {
+        var content_frame = parent.contents;
+        content_frame.location = the_url;
+    }
+    </script>
+    </head>
+<body>
+    <h1>News navigation</h1>
+<a href = "http://www.wired.com"
+onMouseOver = "changeContents('http://www.wired.com');
+">Wired News</a><br>
+<a href = "http://www.news.com"
+onMouseOver = "changeContents('http://www.news.com');
+">C|Net News</a><br>
+<a href = "http://www.newsoftheweird.com"
+onMouseOver = "changeContents('http://www.newsoftheweird.com');
+">News of the Weird</a><br>
+</body>
+</html>

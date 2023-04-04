@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+        windows.onload = function ()
+        {
+            canvasBike = document.getElementById("canvasBike");
+            contextBike = canvasBike.getcontext("2d");
+            canvasBG = document.getElementById("canvasBackground");
+            contextBG = canvasBG.getContext("2d");
+            
+            var width = 280; var height = 200;
+            var gap = 10; var hubRadius = 5;
+            var pedalRadius = 15; var tireWidth = 3;
+            var rimRadius = 40; var rimWidth = 8;
+            var spokeWidth = 1; var spokeNum = 50;
+            var spokeInterval = 20; var spokeColor = "silver";
+            var wheelFOffsetX = 80; var wheelFOffsetY = -5;
+            var wheelROffsetX = -60; var wheelROffsetY = -5;
+            var strutFOffsetX = 50; var strutFOffsetY = -80;
+            var strutROffsetX = -30; var strutROffsetY = -80;
+            var braceFOffsetX = 55; var braceFOffsetY = -58;
+            var handleOffsetX = 49; var handleOffsetY = -79;
+            var bikeX = (width/2)-13;
+            var bikeY = (height/2)+40;
+            var startAngle = (Math.PI/180)*0;
+            var endAngle = (Math.PI/180)*360;
+            
+            // A3. BACKGROUND color.
+            contextBG.fillStyle = "black";
+            contextBG.fillRect(0, 0, canvasBG.width, canvasBG.height);
+            
+            // A4. DRAW BIKES.
+            // row col floor wall chassis backRim frontRim type
+            // --- --- --------- --------- --------- --------- --------- -----------
+            drawBike(1, 1,"#4B0082","#2F4F4F","#FF1493","#0000FF","#7FFF00","Custom" );
+            drawBike(1, 2,"#8C0CE8","#E8160C","#1000FF","#FF5C0D","#FF00CC","Analogous");
+            drawBike(2, 1,"#B2159E","#4C2DFF","#FFDE50","#0000FF","#7FFF00","Triad" );
+            drawBike(2, 2,"#050099","#FFBD00","#CC0200","#CC5800","#40FF00","Primary" );
+            drawBike(3, 1,"#FF6571","#57CC4D","#BC3BFF","#FFEE4D","#73FFF9","Pastel" );
+            drawBike(3, 2,"#FF9000","#F600FF","#04CC00","#FFEB00","#CC0100","Neon" );
+            
+            // B. DRAW BIKE function.
+            function drawBike(row,col,floor,wall,chassis,backRim,frontRim,colorScheme)
+            {
+                // B1. TRANSLATE to corner of drawing area.
+            contextBG.save();
+            contextBG.translate (((col*gap)+((col-1)*width)),
+            ((row*gap)+((row-1)*height)));
+            contextBike.save();
+            contextBike.translate(((col*gap)+((col-1)*width)),
+            ((row*gap)+((row-1)*height)));
+            // B2. FLOOR.
+            contextBG.fillStyle = floor;
+            contextBG.fillRect(0, height/2, width, height/2);
+            // B3. WALL.
+            contextBG.fillStyle = wall;
+            contextBG.fillRect(0, 0, width, height*.65);
+            // B4. COLOR SCHEME ID.
+            contextBG.font = "bold 15pt arial";
+            contextBG.fillStyle = "white";
+            contextBG.strokeStyle = "white";
+            contextBG.textAlign = "left";
+            contextBG.fillText(colorScheme, 10, 21);
+            // B5. TRANSLATE to center of pedals.
+            contextBike.translate(bikeX, bikeY);
+            // B6. WHEELS.
+            wheel(wheelFOffsetX, wheelFOffsetY, frontRim);
+            wheel(wheelROffsetX, wheelROffsetY, backRim );
+            // B7. CHASSIS.
+            chassisPart(0, 0, wheelROffsetX, wheelROffsetY, 3, chassis);
+            chassisPart(0, 0, strutROffsetX, strutROffsetY, 6, chassis);
+            chassisPart(strutROffsetX, strutROffsetY, strutFOffsetX, strutFOffsetY,
+            9, chassis);
+            chassisPart(strutFOffsetX, strutFOffsetY, wheelFOffsetX, wheelFOffsetY,
+            6, chassis);
+            chassisPart(0, 0, braceFOffsetX, braceFOffsetY, 6, chassis);
+            // B8. CHAIN
+            chassisPart(0, -pedalRadius, wheelROffsetX, wheelROffsetY-hubRadius,
+            3, "gray");
+            chassisPart(0, pedalRadius, wheelROffsetX, wheelROffsetY+hubRadius,
+            3, "gray");
+            chassisPart(wheelROffsetX, wheelROffsetY, strutROffsetX, strutROffsetY,
+            3, chassis);
+            // B9. SEAT.
+            chassisPart(strutROffsetX-1, strutROffsetY-5,
+            strutROffsetX-5, strutROffsetY-16, 5, "silver");
+            chassisPart(strutROffsetX-20, strutROffsetY-19,
+            strutROffsetX+8, strutROffsetY-19, 8, "black" );
+            // B10. HANDLE BAR.
+            chassisPart(strutFOffsetX-1, strutFOffsetY-5,
+            strutFOffsetX-5, strutFOffsetY-16, 5, "silver");
+            chassisPart(strutFOffsetX-5, strutFOffsetY-16,
+            strutFOffsetX+8, strutFOffsetY-14, 7, "silver");
+            chassisPart(strutFOffsetX+8, strutFOffsetY-14,
+            strutFOffsetX+11, strutFOffsetY-20, 7, "black" );
+            // B11. PEDAL HUB.
+            contextBike.beginPath();
+            contextBike.arc(0, 0, pedalRadius, startAngle, endAngle, false);
+            contextBike.fillStyle = "silver";
+            contextBike.strokeStyle = "gray";
+            contextBike.lineWidth = 1;
+            contextBike.fill();
+            contextBike.stroke();
+            // B12. PEDALS.
+            chassisPart(-15, -15, +15, +15, 5, "darkgray");
+            chassisPart(-20, -15, -10, -15, 6, "black" );
+            chassisPart(+20, +15, +10, +15, 6, "black" );
+            // B13. RESTORE CONTEXTS.
+            contextBG.restore();
+            contextBike.restore();
+            // C. WHEEL function.
+            function wheel(xPos, yPos, color)
+            {
+            // C1. TRANSLATE to center of the wheel.
+            contextBike.save();
+            contextBike.translate(xPos, yPos);
+            // C2. GRADIENT.    
+            var grad = contextBike.createRadialGradient(0, 0, rimRadius-rimWidth,
+            0, 0, rimRadius);
+            grad.addColorStop(.5, "darkgray");
+            grad.addColorStop( 1, color );
+            // C3. SPOKES.
+            contextBike.save();
+            for(s=0; s<=spokeNum; s++)
+            {
+            contextBike.rotate(((Math.PI)/180)*spokeInterval);
+            contextBike.strokeStyle = spokeColor;
+            contextBike.lineWidth = spokeWidth;
+            
+         contextBike.beginPath();
+            contextBike.moveTo(0, 0);
+            contextBike.lineTo(0, rimRadius);
+            contextBike.stroke();
+            }
+            contextBike.restore();
+            // C4. RIM.
+            contextBike.fillStyle = grad;
+            contextBike.beginPath();
+            contextBike.arc(0,0,rimRadius,startAngle,endAngle,false);
+            contextBike.strokeStyle = grad;
+            contextBike.lineWidth = rimWidth;
+            contextBike.stroke();
+            // C5. TIRE.
+            contextBike.beginPath();
+            contextBike.arc(0,0,rimRadius+(rimWidth/2),startAngle,endAngle,false);
+            contextBike.strokeStyle = "black";
+            contextBike.lineWidth = tireWidth;
+            contextBike.stroke();
+            // C6. RESTORE context.
+            contextBike.restore();
+            }
+            // D. CHASSIS PART function.
+            function chassisPart(xStart, yStart, xEnd, yEnd, width, color)
+            {
+            contextBike.strokeStyle = color;
+            contextBike.lineWidth = width;
+            contextBike.lineCap = "round";
+            contextBike.beginPath();
+            contextBike.moveTo(xStart, yStart);
+            contextBike.lineTo(xEnd, yEnd);
+            contextBike.stroke();
+            }
+            }
+            }
+            </script>
+</head>
+<body>
+<div>
+<!-- E. CANVAS DEFINITIONS -->
+<canvas id = "canvasBike" width = "590" height ="640"
+style = "border:2px solid black; position:absolute;
+left:auto; top:auto; z-index: 2">
+</canvas>
+<canvas id = "canvasBackground" width = "590" height ="640"
+style = "border:2px solid black; position:absolute;
+left:auto; top:auto; z-index: 1">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+//Combo box css styles
+.combo-box .list-cell{
+    -fx-text-fill: #311D3F; //text color
+    -fx-padding: 3 0 2 7;
+    -fx-cell-size: 1.66667em;
+}
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover{
+    -fx-background-color: #07689F;//prev selected
+    -fx-text-fill: #FFFFFF;
+}
+.combo-box-popup .list-view .list-cell:filled:hover{
+    -fx-background-color:  #E7E6E1; //background cell hover
+    -fx-text-fill: #311D3F;
+}
+.combo-box > .list-cell {
+    -fx-background-color:  #E7E6E1; //selected cell
+}
+
+
+//search bar styles
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: white;
+    -fx-border-color: lightgray;
+    -fx-background-radius: 2em;
+    -fx-border-radius:2em;
+}
+//The main scrollbar **thumb** CSS class which we drag every time (movable)
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color:    #e8165e ;
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 8em;
+}
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: #68AE00;
+    -fx-background-radius: 0em;
+    -fx-padding:0 10 0 0;
+}
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape: " ";
+    -fx-padding:0;
+}
+
+//shadow tile effect
+.tiles{
+    -fx-background-color: rgb(255.0, 255.0, 255.0);
+    -fx-background-radius: 4.0;
+    -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0,0.15), 6.0, 0.7, 0.0,1);
+}
+
+//Tab pane styles for home page
+.jfx-tab-pane .headers-region {
+    -fx-background-color:    #68AE00;
+}
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color:   #68AE00;
+}
+.jfx-tab-pane .tab-selected-line {
+    -fx-background-color:   #FFCD00;
+    -fx-stroke-width: 3pt;
+}
+.jfx-tab-pane .tab:selected {
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color:  #FFCD00;
+    -fx-background-color: #7CBD1E;
+}
+.jfx-tab-pane .tab-label {
+    -fx-text-fill: #fff;
+    -fx-font-weight: normal;
+    -fx-font-size: 18;
+}
+
+//progress bar color
+.progress-bar .bar{
+    -fx-background-color:   #FF5722;
+}

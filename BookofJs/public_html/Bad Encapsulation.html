@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function getNames()
+        {
+            the_name = prompt("What is your name?","");
+            dog_name = getDogName();
+            alert(the_name + " has a dog named " +dog_name);
+        }
+        
+        function getDogName()
+        {
+            the_name = prompt("What is your dog's name?","");
+            return the_name;
+        }
+    </script>
+</head>
+<body>
+    <a href="#" onclick="getNames(); return false;">
+        Click here for a survey
+    </a>
+</body>
+</html>

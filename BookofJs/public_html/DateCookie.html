@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function setCookie()
+        {
+            var the_date = new Date();
+            var the_cookie= "date="+escape(the_date);
+            document.cookie = the_cookie;
+        }
+        
+        function readCookie()
+        {
+            if(document.cookie)
+            {
+                var the_cookie = document.cookie;
+                var the_cookie_array = the_cookie_split("date=");
+                var the_date = unescape(the_cookie_array[1]);
+                
+                document.write("The last time you visited here was: "+the_date);
+                document.write("<br>");
+                
+            }
+        }
+    </script>
+    </head>
+<body>
+    <h1>Welcome</h1>
+<script type="text/javascript">
+    readCookie();
+    setCookie();
+</script>
+</body>
+</html>

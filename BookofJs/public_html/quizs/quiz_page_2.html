@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Quiz Page 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    </head>
+<body>
+Answer the following true/false questions:
+<p>
+<form>
+A whale is a fish.<br>
+<input type = "radio" name = "whale"
+onClick = "parent.tracker.answers[2]='true';">True<br>
+<input type = "radio" name = "whale"
+onClick = "parent.tracker.answers[2]='false';">False<br>
+<p>
+A human is a primate.<br>
+<input type = "radio" name = "human"
+onClick = "parent.tracker.answers[3]='true';">True<br>
+<input type = "radio" name = "human"
+onClick = "parent.tracker.answers[3]='false';">False<br>
+    <p>
+        <input type = "button" value = "Score the Quiz"
+onClick = "parent.tracker.score(parent.tracker.answers);">
+            </form>
+</body>
+</html>

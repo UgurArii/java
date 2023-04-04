@@ -1,0 +1,100 @@
+:root{
+    font-size: calc(0.5em +1vw);
+    -main-font: Helvetica, Arial, sans-serif;
+    -brand-color:#369;
+}
+
+html{
+    font-size: .625em;
+}
+ul{
+    font-size: .8rem;
+}
+body{
+    font-size: 1.2em;
+}
+
+ul{
+    font-size: .8em;
+}
+
+ul ul{
+    font-size: 1em;
+}
+.slogan{
+    font-size: 1.2em;
+    padding: 1.2em;
+    background-color: #ccc;
+}
+  .box {
+    padding: 1em;
+    border-radius: 1em;
+    background-color: lightgray;
+  }
+  .box-small {
+    font-size: 12px;
+   }
+    .box-large {
+    font-size: 18px;
+  }
+
+.padded{
+    font-size: 16px;
+    padding: 1em;
+}
+
+.panel{
+    font-size: 1rem;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 1px solid #999;
+    background-color: var(-main-bg);
+    color: var(-main-color);
+}
+
+.panel > h2{
+    margin-top: 0;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.panel.large{
+    font-size: 1.2rem;
+}
+@media (min-width: 800px){
+    :root{
+        font-size: 0.875em;
+    }
+}
+
+@media (min-width: 1200px){
+    :root{
+        font-size: 1em;
+    }
+}
+
+.square{
+    width: 90vmin;
+    height: 90vmin;
+    background-color: #369;
+}
+
+.about-us {
+font-size: 2em;
+}
+
+p{
+   font-family: var(-main-font, sans-serif);
+    color: var(-secondary-color, blue);
+}
+
+.dark{
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #999;
+    -main-bg: #333;
+    -main-color:#fff;
+}
+
+

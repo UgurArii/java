@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="textArea1" min="-2" pref="285" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="281" max="-2" attributes="0"/>
+              <EmptySpace pref="69" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  <Component id="textArea1" pref="202" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="166" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="cc" red="0" type="rgb"/>
+            </Property>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="Gele dilber gel Allah&#x131; seversen&#xa;Gel a&#x11f;latma beni eller i&#xe7;inde&#xa;Ne acayip olur &#x15f;u halk-&#x131; alem&#xa;S&#xf6;yle&#x15f;irler bizi diller i&#xe7;inde&#xa;&#xa;Bunca zaman hasretinden g&#xfc;lmedim&#xa;B&#xf6;yle zalim olaca&#x11f;&#x131;n bilmedim&#xa;&#xc7;ok yerleri gezdim amma g&#xf6;rmedim&#xa;Bencileyin geda kullar i&#xe7;inde&#xa;&#xa;Bedir olur do&#x11f;ar art&#x131;k dulunmaz&#xa;Akar &#xe7;e&#x15f;mim ya&#x15f;&#x131; bir dem silinmez&#xa;Umar&#x131;m ki &#x15f;unda asla bulunmaz&#xa;Sencileyin gonce g&#xfc;ller i&#xe7;inde&#xa;&#xa;Mustafa s&#xf6;yler s&#xf6;z&#xfc;n&#xfc; saz ile&#xa;S&#xfc;reg&#xfc;r devran&#x131; &#x15f;evkce &#x15f;az ile&#xa;K&#x131;rm&#x131;z&#x131;lar giy de sal&#x131;n naz ile&#xa;Ko ben g&#xf6;r&#xfc;neyim &#xe7;ullar i&#xe7;inde"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="java.awt.TextArea" name="textArea1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Gele dilber gel Allah&#x131; seversen&#xa;Gel a&#x11f;latma beni eller i&#xe7;inde&#xa;Ne acayip olur &#x15f;u halk-&#x131; alem&#xa;S&#xf6;yle&#x15f;irler bizi diller i&#xe7;inde&#xa;&#xa;Bunca zaman hasretinden g&#xfc;lmedim&#xa;B&#xf6;yle zalim olaca&#x11f;&#x131;n bilmedim&#xa;&#xc7;ok yerleri gezdim amma g&#xf6;rmedim&#xa;Bencileyin geda kullar i&#xe7;inde&#xa;&#xa;Bedir olur do&#x11f;ar art&#x131;k dulunmaz&#xa;Akar &#xe7;e&#x15f;mim ya&#x15f;&#x131; bir dem silinmez&#xa;Umar&#x131;m ki &#x15f;unda asla bulunmaz&#xa;Sencileyin gonce g&#xfc;ller i&#xe7;inde&#xa;&#xa;Mustafa s&#xf6;yler s&#xf6;z&#xfc;n&#xfc; saz ile&#xa;S&#xfc;reg&#xfc;r devran&#x131; &#x15f;evkce &#x15f;az ile&#xa;K&#x131;rm&#x131;z&#x131;lar giy de sal&#x131;n naz ile&#xa;Ko ben g&#xf6;r&#xfc;neyim &#xe7;ullar i&#xe7;inde"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

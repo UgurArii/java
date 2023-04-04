@@ -1,0 +1,19 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+.bg-dark {
+  background-color: #105469 !important;
+}
+
+.nav-item:hover {
+  color: #E2B842 !important;
+}
+
+h1 {
+  color: #105469;
+  font-weight: 700;
+}
+
+footer, footer .container .col{
+  height: 200px;
+}

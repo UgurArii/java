@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        var the_timeout;
+        
+        function moveNumber()
+        {
+            var the_div, move_amount;
+            the_div = window.document.all.numberOne.style;
+            move_amount = parseInt(Math.random() * 10);
+            if(parseInt(Math.random()*10)<5)
+            {
+                the_div.left = parseInt(the_div.left) + move_amount;
+            }else{
+                the_div.top = parseInt(the_div.top) - move_amount;
+            }
+            
+            random_number = parseInt(Math.random() *10);
+            
+            if(parseInt(Math.random() *10)<5)
+            {
+            the_div.top = parseInt(the_div.top) + move_amount;
+            } else {
+            the_div.top = parseInt(the_div.top) - move_amount;
+            }
+            the_timeout = setTimeout("moveNumber();", 100);
+        }
+    </script>
+</head>
+<body>
+    <h1>The Wandering One</h1>
+<div id="numberOne" style="position: absolute; top:150; left:100; z-index: -1">
+    <img src="one.jpg" alt=""/>
+</div>
+<br>
+<a href="#" onclick="the_timeout=setTimeout('moveNumber();',100); return false;">
+    Start wandering
+</a><br>
+<a href="#" onclick="clearTimeout(the_timeout); return false;">Stop wandering</a>
+</body>
+</html>

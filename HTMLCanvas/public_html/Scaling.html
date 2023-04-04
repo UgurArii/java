@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   <script>
+        window.onload = function(){
+            canvas = document.getElementById("canvasArea");
+            context = canvas.getContext("2d");
+            
+            drawSquare( 25, 25, 1.4, 1.4, "purple", true );
+            drawSquare( 25, 25, 1.0, 1.1, "red", true );
+            drawSquare( 25, 25, 0.7, 0.7, "orange", true );
+            drawSquare(100, 25, 1.4, 1.4, "purple", false);
+            drawSquare(100, 25, 1.0, 1.1, "red", false);
+            drawSquare(100, 25, 0.7, 0.7, "orange", false);
+            
+            function drawSquare(xPos, yPos, scaleH, scaleV, color, save){
+                if (save) {context.save();}
+                // B2. ATTRIBUTES & VARIABLES.
+                context.fillStyle = color; var size = 35;
+                // B3. TRANSLATE position.
+                context.translate(xPos, yPos);
+                // B4. SCALE canvas.
+                context.scale(scaleH, scaleV);
+                // B5. SQUARE display.
+                context.fillRect(0, 0, size, size);
+                // B6. RESTORE context.
+                if (save) {context.restore();}
+            }
+        }
+    </script>
+</head>
+<body>
+<div style="width:450px; height:160px; margin:0 auto; padding: 5px;" >
+    <canvas id = "canvasArea" width="450" height="160" style="border:2px solid black">
+        
+    </canvas>
+</div>
+</body>
+</html>

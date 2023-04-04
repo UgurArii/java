@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT *  FROM sirket.kisiler;]]>
+	</queryString>
+	<field name="kisilerId" class="java.lang.Integer"/>
+	<field name="adi" class="java.lang.String"/>
+	<field name="soyadi" class="java.lang.String"/>
+	<field name="yasi" class="java.lang.Integer"/>
+	<field name="telefon" class="java.lang.Integer"/>
+	<field name="meslegi" class="java.lang.String"/>
+	<field name="uzmanlikAlani" class="java.lang.String"/>
+	<field name="tecrubeYili" class="java.lang.Integer"/>
+	<field name="ehliyet" class="java.lang.String"/>
+	<field name="proje" class="java.lang.String"/>
+	<variable name="kisilerId_SUM" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{kisilerId}]]></variableExpression>
+	</variable>
+	<group name="meslegi">
+		<groupExpression><![CDATA[$F{meslegi}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="110" y="32" width="330" height="34"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="139" y="32" width="311" height="34" forecolor="#FF0000"/>
+				<textElement>
+					<font fontName="Arial" size="24" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[VERİ TABANI BİLGİLERİ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="55" height="20" forecolor="#FF0000"/>
+				<textElement/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="0" width="55" height="20"/>
+				<textElement/>
+				<text><![CDATA[ADI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="0" width="55" height="20"/>
+				<textElement/>
+				<text><![CDATA[SOYADI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="165" y="0" width="55" height="20"/>
+				<textElement/>
+				<text><![CDATA[YASI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="55" height="20"/>
+				<textElement/>
+				<text><![CDATA[TELEFON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="0" width="55" height="20"/>
+				<textElement/>
+				<text><![CDATA[MESLEK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[Uzmanlık Alanı]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="0" width="69" height="20"/>
+				<textElement/>
+				<text><![CDATA[Tecrube Yılı]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="0" width="42" height="20"/>
+				<textElement/>
+				<text><![CDATA[ehliyet]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="511" y="0" width="39" height="20"/>
+				<textElement/>
+				<text><![CDATA[proje]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="55" height="20" forecolor="#FF0000"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{kisilerId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="0" width="55" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{adi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="55" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{soyadi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="165" y="0" width="55" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{yasi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="55" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{telefon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="275" y="0" width="55" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{meslegi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="80" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{uzmanlikAlani}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="385" y="0" width="55" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tecrubeYili}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="55" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ehliyet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="495" y="0" width="55" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proje}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="31" width="555" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="34" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

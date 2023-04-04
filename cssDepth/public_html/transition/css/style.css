@@ -1,0 +1,105 @@
+
+button{
+    background-color: hsl(180, 50%, 50%);
+    border: 0;
+    color: white;
+    font-size: 1rem;
+    padding: .3em 1em;
+    transition-property: all;
+transition-duration: 0.5s;
+}
+
+button:hover {
+background-color: hsl(0, 50%, 50%);
+border-radius: 1em;
+}
+
+.container {
+position: relative;
+height: 30px;
+}
+
+.box {
+position: absolute;
+left: 0;
+height: 30px;
+width: 30px;
+background-color: hsl(130, 50%, 50%);
+transition: all 1s steps(3, start);
+}
+.container:hover .box {
+left: 400px;
+}
+
+
+body {
+font-family: Helvetica, Arial, sans-serif;
+}
+.dropdown__toggle {
+display: block;
+padding: 0.5em 1em;
+border: 1px solid hsl(280, 10%, 80%);
+color: hsl(280, 30%, 60%);
+background-color: white;
+font: inherit;
+text-decoration: none;
+transition: background-color 0.2s linear;
+}
+
+.dropdown__toggle:hover {
+background-color:hsl(280, 15%, 95%);
+}
+.dropdown__drawer {
+position: absolute;
+display: none;
+background-color: white;
+width: 10em;
+}
+.dropdown.is-open .dropdown__drawer {
+display: block;
+}
+.menu {
+padding-left: 0;
+margin: 0;
+list-style: none;
+}
+.menu > li + li > a {
+border-top: 0;
+}
+
+.menu > li > a {
+display: block;
+padding: 0.5em 1em;
+color: hsl(280, 40%, 60%);
+background-color: white;
+text-decoration: none;
+transition: all .2s linear;
+border: 1px solid hsl(280, 10%, 80%);
+}
+.menu > li > a:hover {
+background-color: hsl(280, 15%, 95%);
+color: hsl(280, 25%, 10%);
+}
+
+.dropdown__drawer {
+position: absolute;
+background-color: white;
+width: 10em;
+opacity: 0;
+transition: opacity 0.2s linear;
+}
+.dropdown.is-open .dropdown__drawer {
+opacity: 1;
+}
+
+dropdown__drawer {
+position: absolute;
+background-color: white;
+width: 10em;
+height: 0;
+overflow: hidden;
+transition: height 0.3s ease-out;
+}
+.dropdown.is-open .dropdown__drawer {
+height: auto;
+}

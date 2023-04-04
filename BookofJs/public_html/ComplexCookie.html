@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function readTheCookie(the_info)
+        {
+            var the_cookie = document.cookie;
+            var the_cookie = unescape(the_cookie);
+            
+            var broken_cookie =the_cookie.split("=");
+            var the_values = broken_cookie[1];
+            
+            var separated_values = the_values.split("/");
+            
+            var property_value = "";
+            
+            for(loop = 0; loop < separated_values.length; loop++)
+            {
+                property_value = separated_values[loop];
+                var broken_info = property_value.split(":");
+                var the_property = broken_info[0];
+                var the_value = broken_info[1];
+                the_info[the_property] = the_value;
+            }
+            
+        }
+        
+        function setCookie()
+{
+var the_cookie = "my_cookie=name:thau/age:just a tyke/phone:411";
+document.cookie = escape(the_cookie);
+}
+setCookie();
+var cookie_information = new Array();
+readTheCookie(cookie_information);
+    </script>
+</head>
+<body>
+<h1>This Is What I Know About You</h1>
+<script type="text/javascript">
+    document.write("Name: " + cookie_information["name"] + "<br>");
+    document.write("Age: " +cookie_information["age"] + "<br>");
+    document.write("Phone: " + cookie_information["phone"] + "<br>");
+</script>
+</body>
+</html>

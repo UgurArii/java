@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<!-- #B8124E; -->
+
+<AnchorPane fx:id="mainpane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.paymentController">
+   <children>
+      <AnchorPane fx:id="insidepane" layoutY="35.0" prefHeight="630.0" prefWidth="950.0" style="-fx-border-radius: 10;">
+         <children>
+            <AnchorPane fx:id="methodpane" layoutX="275.0" layoutY="175.0" prefHeight="280.0" prefWidth="400.0" style="-fx-background-color: #ffffff;" styleClass="tiles">
+               <children>
+                  <Label layoutX="91.0" layoutY="25.0" text="Payment Method">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="90.0" layoutY="200.0" text="Cash">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="276.0" layoutY="200.0" text="Card">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="cardimage" layoutX="240.0" layoutY="100.0">
+                     <image>
+                        <Image url="@images/visaa.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="cashimage" layoutX="40.0" layoutY="100.0">
+                     <image>
+                        <Image url="@images/casha.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="toppane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="950.0" style="-fx-background-color: #4A772F;">
+         <children>
+            <Label layoutX="429.0" layoutY="7.0" text="Take Payment" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView glyphName="CREDIT_CARD" size="20">
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="WHITE" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </MaterialDesignIconView>
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="closebtn" contentDisplay="GRAPHIC_ONLY" layoutX="915.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#cancelOrder" prefHeight="35.0" prefWidth="35.0" ripplerFill="WHITE">
+         <graphic>
+            <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" size="24" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

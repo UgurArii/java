@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>I Know Which Browser You're Using!</title>
+    <script src="brwsniff.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+ <script type="text/javascript">
+        var browser_info = getBrowser();
+        var browser_name = browser_info[0];
+        var browser_version = browser_info[1];
+        window.document.write("You are using " + browser_name +" version " + browser_version);
+    </script>
+<a href="http://www.bookofjavascript.com/">Visit the Book of Javascript website</a>
+
+<a href = "http://www.bookofjavascript.com/"
+onClick = "alert('Off to the Book of JavaScript!');">Visit the Book of
+JavaScript website</a>
+<a href = "#" onMouseOver = "alert('Mayday! Mouse overboard!');">board</a>
+<a href = "#"
+onMouseOver = "alert('Mayday! Mouse overboard!');"
+onMouseOut = "alert('Hooray! Mouse off of board!!');"
+onClick = "return false;">
+board
+</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<script type="text/javascript">
+    alert("This is Mad Lib! Please fill in the blanks appropriately");
+    var answer = new Array();
+    answer[0] = prompt("an animal","bear");
+    answer[1] = prompt("an adjective","happy");
+    answer[2] = prompt("a past tense verb","kissed");
+    answer[3] = prompt("an object","tree");
+    
+    var the_string = "";
+    the_string = the_string + "Once upon a time there was a " +answer[0];
+    the_string = the_string + "who was very " +answer[1]+"." ;
+    the_string = the_string + "In fact, he was so " +answer[2];
+    the_string = the_string + "that he " + answer[2] + " a " +answer[3] + ".";
+    window.document.writeln(the_string);
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        windows.onload = function ()
+        {
+            canvas = document.getElementById("canvasArea");
+            context = canvas.getContext("2d");
+            
+            // A2. VARIABLES.
+            var width = 60; var height = 75; var gap = 50;
+            // A3. ATTRIBUTES of lines.
+            context.strokeStyle = "red"; context.lineWidth = 20;
+            context.shadowOffsetX = 4; context.shadowOffsetY = 4;
+            context.shadowBlur = 7; context.shadowColor = "gray";
+            
+            // A4. DRAW lines.
+            // xStart yStart cap
+            // ------ ------ -------
+            drawLine(25, 25, "butt" );
+            drawLine(25, 75, "square");
+            drawLine(25, 125, "round" );
+
+            drawJoin(175+(0*gap)+(0*width), 120, "miter");
+            drawJoin(175+(1*gap)+(1*width), 120, "bevel");
+            drawJoin(175+(2*gap)+(2*width), 120, "round");
+            
+            // B. LINE DRAWING function.
+            function drawLine(xStart, yStart, cap)
+            {
+            // B1. ATTRIBUTES of lines.
+            context.lineCap = cap;
+            // B2. DRAW lines.
+            context.beginPath();
+            context.moveTo(xStart, yStart);
+            context.lineTo(xStart+1.5*width, yStart);
+            context.stroke();
+            }
+            // C. LINE JOINING function.
+            function drawJoin(xStart, yStart, join)
+            {
+            // C1. ATTRIBUTES of lines.
+            context.lineCap = "round";
+            // C2. DRAW lines.
+            context.beginPath();
+            context.moveTo(xStart, yStart);
+            context.lineTo(xStart+(width/2), yStart-height);
+            context.lineTo(xStart+width, yStart);
+            context.lineJoin = join;
+            context.stroke();
+            }
+        }
+    </script>
+
+</head>
+<body>
+<div style = "width:500px; height:160px; margin:0 auto; padding:5px;">
+<canvas id = "canvasArea" width = "500" height = "160"
+style = "border:2px solid black">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas> </div>
+</body>
+</html>

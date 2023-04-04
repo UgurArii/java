@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function displayEvent(evt)
+        {
+            var x =0;
+            var y =0;
+            
+            if(evt.pageX)
+            {
+                x = evt.pageX;
+                y = evt.pageY;
+            }else if(evt.clientX){
+                x = evt.clientX + document.body.scrollLeft;
+                y = evt.clientY + document.body.scrollTop;
+            }
+            document.getElementById("results").value += x + " " + y + "\n";
+        }
+    </script>
+</head>
+<body>
+<div id="box" style="height: 100px; width: 100px; border: 1px black solid;"
+     onMouseMove = "displayEvent(event);"
+     onMouseOver = "document.getElementById('results').value='';">
+    
+</div>
+<form>
+    <textarea id="results" cols="80" rows="20">
+        
+    </textarea>
+</form>
+</body>
+</html>

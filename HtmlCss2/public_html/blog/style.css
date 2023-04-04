@@ -1,0 +1,82 @@
+   body{
+            font: 97% arial, helvetica, sans-serif;
+            background: orange;
+            margin: 0;
+        }
+        
+        .erisim, h1{
+            position: absolute;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        #baslik{
+            background: #036;
+            height: 60px; 
+        }
+        
+        #navigation{
+            position: absolute;
+            top:60px;
+            margin-top: 0.5em;
+            left: 0;
+            width: 135px;
+        }
+        
+        
+        #navigation ul{
+           margin: 0 0 1em 0;
+           padding: 0;
+           list-style: none;
+        }
+        
+        #navigation ul a{
+            color: white;
+            text-decoration: none;
+            display: block;
+            background: #17a;
+            border-left: 3px solid red;
+            padding: 0 0.5em;
+            margin: 0 1em 3px 1em;
+        }
+        
+        #navigation ul a:hover{
+            background: orange;
+            border-color: white;
+            color:#212121;
+            
+        }
+        
+        #sayfaIcerik{
+            border-left: 135px solid #069;
+            background: white;
+            padding: 1px 20px 1em 40px;
+        }
+        
+        h2{
+            font-size: 1.5em;
+            color: #036;
+        }
+        
+        #sayfaIcerik img{
+            width: 100px;
+            height: 150px;
+            padding: 1px;
+            border: 1px dotted #333;
+            float:right;
+            margin: 0 0 1em 1em;
+        }
+        
+        #icerik{
+            position: relative;
+            width: 980px;
+            border: solid red;
+            border-width: 0 3px;
+            margin: auto;
+        }
+        
+         #sayfaIcerik > p::selection{
+            color:red;
+            background: yellow;
+        }
+        

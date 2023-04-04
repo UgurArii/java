@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body{
+            font: 97% arial, helvetica, sans-serif;
+            background: orange;
+            margin: 0;
+        }
+        
+        .erisim, h1{
+            position: absolute;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        #baslik{
+            background: #036;
+            height: 60px; 
+        }
+        
+        #navigation{
+            position: absolute;
+            top:60px;
+            margin-top: 0.5em;
+            left: 0;
+            width: 135px;
+        }
+        
+        
+        #navigation ul{
+           margin: 0 0 1em 0;
+           padding: 0;
+           list-style: none;
+        }
+        
+        #navigation ul a{
+            color: white;
+            text-decoration: none;
+            display: block;
+            background: #17a;
+            border-left: 3px solid red;
+            padding: 0 0.5em;
+            margin: 0 1em 3px 1em;
+        }
+        
+        #navigation ul a:hover{
+            background: orange;
+            border-color: white;
+            color:#212121;
+            
+        }
+        
+        #sayfaIcerik{
+            border-left: 135px solid #069;
+            background: white;
+            padding: 1px 20px 1em 40px;
+        }
+        
+        h2{
+            font-size: 1.5em;
+            color: #036;
+        }
+        
+        #sayfaIcerik img{
+            width: 100px;
+            height: 150px;
+            padding: 1px;
+            border: 1px dotted #333;
+            float:right;
+            margin: 0 0 1em 1em;
+        }
+        
+        #icerik{
+            position: relative;
+            width: 980px;
+            border: solid red;
+            border-width: 0 3px;
+            margin: auto;
+        }
+        
+         #sayfaIcerik > p::selection{
+            color:red;
+            background: yellow;
+        }
+        
+    </style>
+
+</head>
+<body>
+<div id="icerik">
+    <div id="baslik">
+        <h1>HTML-CSS Blog Sitesi</h1> 
+    </div>
+    <div id="navigation">
+        <p><a href="#content" class="erisim">Navigasyonu Atla</a></p>
+        <ul>
+            <li><a href="">Biyografi</a></li>
+            <li><a href="">Tarihçe</a></li>
+            <li><a href="">Genetik</a></li>
+            <li><a href="">Coğrafya</a></li>
+        </ul>
+        
+        <ul>
+            <li><a href="https://www.java.com/tr/" target="_blank">Java</a></li>
+            <li><a href="">Html-CSS</a></li>
+            <li><a href="">PHP</a></li>
+            <li><a href="">Python</a></li>
+        </ul>
+        <ul>
+            <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="">Hakkımızda</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="">Site Haritası</a></li>
+        </ul>    
+            
+    </div>
+    <div id="sayfaIcerik">
+        <h2>HTML-CSS Blog Sitesi İçeriği</h2>
+        <p>
+        <img src="html.png" alt=""/>HTML, bir programlama dili olarak tanımlanamaz. Zira HTML kodlarıyla kendi başına çalışan bir program yazılamaz. Ancak bu dili yorumlayabilen programlar aracılığıyla çalışabilen programlar yazılabilir. Programlama dili denilememesinin nedeni tam olarak budur. Temel gereği yazı, görüntü, video gibi değişik verileri ve bunları içeren sayfaları birbirine basitçe bağlamak, buna ek olarak söz konusu sayfaların web tarayıcısı yazılımları tarafından düzgün olarak görüntülenmesi için gerekli kuralları belirlemektir. HTML kodunu web tarayıcıları okur, yorumlar ve görsel hale dönüştürürler, dolayısıyla aynı HTML kodunun farklı tarayıcılarda farklı sonuç vermesi olasıdır. CSS ve JavaScript ile beraber kullanıldığında HTML vasıtasıyla görsel ve dinamik web siteleri yaratılabilir.
+        </p>
+        <p>1980 yılında CERN'de görevli olan Tim Berners-Lee, CERN araştırmacılarının bilgilerini ve dokümanlarını birbirleriyle paylaşabilmeleri için bir sistem olması gerektiğine inanıyordu. Bu yüzden prototip olarak ENQUIRE isimli sistemi önerdi. 1989 yılına gelindiğinde internet tabanlı sistemin ilk temellerini yine aynı isim Tim Berners Lee attı.[1] 1990 yılında HTML işaretleme dilini geliştirmesinden sonra World Wide Web (WWW) sistemini kurmuştur. Bu şekilde CERN'de bilgi paylaşımını kolaylaştırma amacı doğrultusunda ortaya çıkan HTML günümüzde hayatımızın vazgeçilmezi olan ağın başlıca temelini oluşturmuştur.</p>
+   
+         <h2>HTML-CSS Blog Sitesi İçeriği</h2>
+        <p>HTML, bir programlama dili olarak tanımlanamaz. Zira HTML kodlarıyla kendi başına çalışan bir program yazılamaz. Ancak bu dili yorumlayabilen programlar aracılığıyla çalışabilen programlar yazılabilir. Programlama dili denilememesinin nedeni tam olarak budur. Temel gereği yazı, görüntü, video gibi değişik verileri ve bunları içeren sayfaları birbirine basitçe bağlamak, buna ek olarak söz konusu sayfaların web tarayıcısı yazılımları tarafından düzgün olarak görüntülenmesi için gerekli kuralları belirlemektir. HTML kodunu web tarayıcıları okur, yorumlar ve görsel hale dönüştürürler, dolayısıyla aynı HTML kodunun farklı tarayıcılarda farklı sonuç vermesi olasıdır. CSS ve JavaScript ile beraber kullanıldığında HTML vasıtasıyla görsel ve dinamik web siteleri yaratılabilir.
+        </p>
+        <p>1980 yılında CERN'de görevli olan Tim Berners-Lee, CERN araştırmacılarının bilgilerini ve dokümanlarını birbirleriyle paylaşabilmeleri için bir sistem olması gerektiğine inanıyordu. Bu yüzden prototip olarak ENQUIRE isimli sistemi önerdi. 1989 yılına gelindiğinde internet tabanlı sistemin ilk temellerini yine aynı isim Tim Berners Lee attı.[1] 1990 yılında HTML işaretleme dilini geliştirmesinden sonra World Wide Web (WWW) sistemini kurmuştur. Bu şekilde CERN'de bilgi paylaşımını kolaylaştırma amacı doğrultusunda ortaya çıkan HTML günümüzde hayatımızın vazgeçilmezi olan ağın başlıca temelini oluşturmuştur.</p>
+    <h2>HTML-CSS Blog Sitesi İçeriği</h2>
+        <p>HTML, bir programlama dili olarak tanımlanamaz. Zira HTML kodlarıyla kendi başına çalışan bir program yazılamaz. Ancak bu dili yorumlayabilen programlar aracılığıyla çalışabilen programlar yazılabilir. Programlama dili denilememesinin nedeni tam olarak budur. Temel gereği yazı, görüntü, video gibi değişik verileri ve bunları içeren sayfaları birbirine basitçe bağlamak, buna ek olarak söz konusu sayfaların web tarayıcısı yazılımları tarafından düzgün olarak görüntülenmesi için gerekli kuralları belirlemektir. HTML kodunu web tarayıcıları okur, yorumlar ve görsel hale dönüştürürler, dolayısıyla aynı HTML kodunun farklı tarayıcılarda farklı sonuç vermesi olasıdır. CSS ve JavaScript ile beraber kullanıldığında HTML vasıtasıyla görsel ve dinamik web siteleri yaratılabilir.
+        </p>
+        <p>1980 yılında CERN'de görevli olan Tim Berners-Lee, CERN araştırmacılarının bilgilerini ve dokümanlarını birbirleriyle paylaşabilmeleri için bir sistem olması gerektiğine inanıyordu. Bu yüzden prototip olarak ENQUIRE isimli sistemi önerdi. 1989 yılına gelindiğinde internet tabanlı sistemin ilk temellerini yine aynı isim Tim Berners Lee attı.[1] 1990 yılında HTML işaretleme dilini geliştirmesinden sonra World Wide Web (WWW) sistemini kurmuştur. Bu şekilde CERN'de bilgi paylaşımını kolaylaştırma amacı doğrultusunda ortaya çıkan HTML günümüzde hayatımızın vazgeçilmezi olan ağın başlıca temelini oluşturmuştur.</p>
+   
+    </div>
+    
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        windows.onload = function (){
+            
+            canvas = document.getElementById("canvasArea");
+            context = canvas.getContext("2d");
+            
+            var x1Pos = 25; var x2Pos = 175; var x3Pos = 325;
+            var yPos = 10;
+            var length = 100; var height = 25;
+            
+            // A3. RECTANGLE with shadow.
+            context.shadowOffsetX = 4;
+            context.shadowOffsetY = 4;
+            context.shadowBlur = 3;
+            context.fillStyle = "deeppink";
+            context.shadowColor = "gray";
+            context.fillRect (x1Pos, yPos, length, height);
+            // A4. RECTANGLE with shadow.
+            context.shadowOffsetX = 8;
+            context.shadowOffsetY = 8;
+            context.shadowBlur = 3;
+            context.strokeStyle = "aqua";
+            context.shadowColor = "lightgreen";
+            context.lineWidth = 9;
+            context.strokeRect (x2Pos, yPos, length, height);
+            
+            // A5. RECTANGLE with shadow.
+            context.shadowOffsetX = 30;
+            context.shadowOffsetY = 30;
+            context.shadowBlur = 9;
+            context.fillStyle = "darkorange";
+            context.shadowColor = "greenyellow";
+            context.fillRect (x3Pos, yPos, length, height);
+        }
+    </script>
+</head>
+<body>
+<div style = "width:500px; height:80px; margin:0 auto; padding:5px;">
+<canvas id = "canvasArea"
+width = "500" height = "80" style = "border:2px solid black">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas> </div>
+</body>
+</html>

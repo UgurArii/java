@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>A Pull-Down Menu for Navigation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function visitSite(the_site)
+        {
+            window.location = the_site;
+        }
+    </script>
+</head>
+<body>
+    <h1>Use the pull-down menu to choose where you want to go</h1>
+    <form name="the_form">
+        <select name="the_select" onchange="visitSite(this.value)">
+            <option value = "http://www.nostarch.com">No Starch Press</option>
+            <option value = "http://www.nytimes.com">The New York Times</option>
+            <option value = "http://www.theonion.com">The Onion</option>
+        </select>
+    </form>
+</body>
+</html>

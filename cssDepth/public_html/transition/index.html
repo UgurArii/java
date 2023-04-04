@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+   <button>Hover over me</button>
+   
+   <br/>
+   <div class="container">
+<div class="box"></div>
+</div>
+
+<div class="dropdown" aria-haspopup="true">
+<button class="dropdown__toggle">Menu</button>
+<div class="dropdown__drawer">
+<ul class="menu" role="menu">
+<li>
+<a href="/features">Features</a>
+</li>
+<li>
+<a href="/pricing">Pricing</a>
+</li>
+<li>
+<a href="/support">Support</a>
+</li>
+<li>
+<a href="/about">About</a>
+</li>
+</ul>
+</div>
+</div>
+<p><a href="/read-more">Read more</a></p>
+<script type="text/javascript">
+(function () {
+var toggle = document.getElementsByClassName('dropdown__toggle')[0];
+var dropdown = toggle.parentElement;
+var drawer = document.getElementsByClassName('dropdown__drawer')[0];
+var height = drawer.scrollHeight;
+toggle.addEventListener('click', function (e) {
+e.preventDefault();
+dropdown.classList.toggle('is-open');
+if (dropdown.classList.contains('is-open')) {
+drawer.style.setProperty('height', height + 'px');
+} else {
+drawer.style.setProperty('height', '0');
+}
+});
+}());
+</script>
+</body>
+
+</html>

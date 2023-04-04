@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Date Script</title>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        var date = new Date();
+        
+        var month = date.getMonth();
+        var day = date.getDate();
+        var year = date.getYear();
+        var hour = date.getHours();
+        var minutes = date.getMinutes();
+        
+        month = month +1;
+        
+        year = fixY2K(year);
+        
+        minutes = fixTime(minutes);
+        
+        var date_string = day + "/"+month + "/"  +year;
+        var time_string = hour + ":" + minutes;
+        var date_time_string = "Today is " +date_string + ". The time is now " + time_string + ".";
+    
+         function fixY2K(number){
+             if(number < 1000){
+                 number = number +1900;
+             }
+             return number;
+         }
+         
+         function fixTime(number)
+         {
+             if(number < 10)
+             {
+                 number = "0" + number;
+             }
+             return  number
+         }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Book of JavaScript Home Page!</h1>
+<script type="text/javascript">
+    document.write(date_time_string);
+</script>
+</body>
+</html>
+
+<!--<script type = "text/javascript">
+//var now = new Date();
+//var yyyy = now.getFullYear();
+//var mm = now.getMonth() + 1;
+//if (10 > mm) mm = '0' + mm;
+var dd = now.getDate();
+if (10 > dd) dd = '0' + dd;
+document.write(dd + '-' + mm + '-' + yyyy);
+</script>-->

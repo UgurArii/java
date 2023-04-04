@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<!-- #B8124E; -->
+
+<AnchorPane fx:id="mainpane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="385.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.seatsController">
+   <children>
+      <AnchorPane fx:id="toppane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0"  style="-fx-background-color: #700961;">
+         <children>
+            <Label layoutX="20.0" layoutY="7.0" text="Select Your Seats" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="closebtn" contentDisplay="GRAPHIC_ONLY" layoutX="675.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleClose" prefHeight="35.0" prefWidth="35.0" ripplerFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="35.0" prefHeight="350.0" prefWidth="710.0" style="-fx-background-color: #E7E6E1;">
+         <children>
+            <Label layoutX="20.0" layoutY="55.0" text="E" textFill="#3a0088">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="105.0" text="F" textFill="#3a0088">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="E1" buttonType="RAISED" layoutX="60.0" layoutY="45.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #8EA6B4; -fx-background-radius: 7;" text="1" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="E2" buttonType="RAISED" layoutX="120.0" layoutY="45.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #4A772F; -fx-background-radius: 7;" text="2" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="E3" buttonType="RAISED" layoutX="180.0" layoutY="45.0" prefHeight="40.0" prefWidth="50.0" ripplerFill="WHITE" style="-fx-background-color: #8EA6B4; -fx-background-radius: 7;" text="3" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="E4" buttonType="RAISED" layoutX="240.0" layoutY="45.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #C40018; -fx-background-radius: 7;" text="4" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="E5" buttonType="RAISED" layoutX="300.0" layoutY="45.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #8EA6B4; -fx-background-radius: 7;" text="5" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="E6" buttonType="RAISED" layoutX="360.0" layoutY="45.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #8EA6B4; -fx-background-radius: 7;" text="6" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="E7" buttonType="RAISED" layoutX="420.0" layoutY="45.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #C40018; -fx-background-radius: 7;" text="7" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="E8" buttonType="RAISED" layoutX="480.0" layoutY="45.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #4A772F; -fx-background-radius: 7;" text="8" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="E9" buttonType="RAISED" layoutX="540.0" layoutY="45.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #4A772F; -fx-background-radius: 7;" text="9" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="E10" buttonType="RAISED" layoutX="600.0" layoutY="45.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #8EA6B4; -fx-background-radius: 7;" text="10" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="F1" buttonType="RAISED" layoutX="60.0" layoutY="95.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #8EA6B4; -fx-background-radius: 7;" text="1" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="F2" buttonType="RAISED" layoutX="120.0" layoutY="95.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #C40018; -fx-background-radius: 7;" text="2" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="F3" buttonType="RAISED" layoutX="180.0" layoutY="95.0" prefHeight="40.0" prefWidth="50.0" ripplerFill="WHITE" style="-fx-background-color: #8EA6B4; -fx-background-radius: 7;" text="3" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="F4" buttonType="RAISED" layoutX="240.0" layoutY="95.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #8EA6B4; -fx-background-radius: 7;" text="4" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="F5" buttonType="RAISED" layoutX="300.0" layoutY="95.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #4A772F; -fx-background-radius: 7;" text="5" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="F6" buttonType="RAISED" layoutX="360.0" layoutY="95.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #C40018; -fx-background-radius: 7;" text="6" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="F7" buttonType="RAISED" layoutX="420.0" layoutY="95.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #8EA6B4; -fx-background-radius: 7;" text="7" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="F8" buttonType="RAISED" layoutX="480.0" layoutY="95.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #8EA6B4; -fx-background-radius: 7;" text="8" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="F9" buttonType="RAISED" layoutX="540.0" layoutY="95.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #C40018; -fx-background-radius: 7;" text="9" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="F10" buttonType="RAISED" layoutX="600.0" layoutY="95.0" prefHeight="40.0" prefWidth="50.0" style="-fx-background-color: #C40018; -fx-background-radius: 7;" text="10" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Line endX="607.0" layoutX="101.0" layoutY="156.0" startX="-100.0" stroke="#700961" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="1.4" />
+            <JFXButton fx:id="confirmbtn" buttonType="RAISED" contentDisplay="RIGHT" graphicTextGap="5.0" layoutX="370.0" layoutY="288.0" onAction="#handleConfirmation" prefHeight="48.0" prefWidth="150.0" style="-fx-background-color: #73A800; -fx-background-radius: 20;" text="Confirm Seats" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="20.0" layoutY="170.0" text="Movie:" textFill="#3a0088">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="17.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="560.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #8EA6B4; -fx-background-radius: 5;" text="Button" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="560.0" layoutY="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #4A772F; -fx-background-radius: 5;" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="560.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #C40018; -fx-background-radius: 5;" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="615.0" layoutY="170.0" text="Available" textFill="#3a0088">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="615.0" layoutY="210.0" text="Selected" textFill="#3a0088">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="615.0" layoutY="250.0" text="Sold" textFill="#3a0088">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="195.0" text="Tickets:" textFill="#3a0088">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="220.0" text="Total:" textFill="#3a0088">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="245.0" text="Seats:" textFill="#3a0088">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="17.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="cancelbtn" buttonType="RAISED" contentDisplay="RIGHT" graphicTextGap="5.0" layoutX="190.0" layoutY="288.0" onAction="#handleCancellation" prefHeight="48.0" prefWidth="150.0" style="-fx-background-color: #00A6ED; -fx-background-radius: 20;" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label fx:id="movietitle" layoutX="110.0" layoutY="170.0" text="Black Panther" textFill="#3a0088">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="totaltickets" layoutX="110.0" layoutY="195.0" text="4" textFill="#3a0088">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalprice" layoutX="110.0" layoutY="220.0" text="£25.00" textFill="#3a0088">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="seatsselected" layoutX="110.0" layoutY="245.0" style="-fx-background-color: #FFBD39;" text="E1, E8, E9, F5" textFill="#3a0088">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="17.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="178.0" prefHeight="20.0" prefWidth="350.0" style="-fx-background-color: #DC4712; -fx-background-radius: 5;" text="Screen" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font></JFXButton>
+            <Label fx:id="limiterror" layoutX="263.0" layoutY="200.0" text="Max Seat Limit Reached" textFill="#c40018" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

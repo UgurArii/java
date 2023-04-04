@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>AntWeb's Use of Arrays and Loops</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+    <form name="bayAreaSearchForm">
+        <input type="checkbox" name="counties" value="alameda"/>Alameda<br>
+        <input type = "checkbox" name = "counties" value =
+"contra costa">Contra Costa<br>
+<input type = "checkbox" name = "counties" value = "marin">Marin<br>
+        <input type="checkbox" name="selectall" onclick="selectAll(window.document.bayAreaSearchForm);"/>Select All<br>
+        
+        
+    </form>
+<script type="text/javascript">
+    function selectAll(thisForm){
+        var count = thisForm.counties.length;
+        var checkedVal = thisForm.selectall.checked;
+        for(var loop = 0; loop < count; loop++)
+        {
+            thisForm.counties[loop].checked = checkedVal;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML> <html> <head> <script>
+// A. WINDOW LOAD function.
+window.onload = function()
+{
+// A1. CANVAS definition variables.
+canvas = document.getElementById("canvasArea");
+context = canvas.getContext("2d");
+// A2. SIZE of square.
+var size = 35;
+// A3. DISPLAY squares.
+// translateH translateV color
+// ---------- ---------- --------
+drawSquare( 0, 0, "gray" );
+drawSquare( size, size, "red" );
+drawSquare( size, size, "orange");
+drawSquare( size, -size, "blue" );
+drawSquare( size, 0, "pink" );
+drawSquare( size, -size, "purple");
+drawSquare( 2*size, size, "green" );
+// B. DRAW SQUARE function.
+function drawSquare(translateH, translateV, color)
+{
+// B1. COLOR.
+context.fillStyle = color;
+// B2. TRANSLATE canvas.
+context.translate(translateH, translateV);
+// B3. SQUARE display.
+context.fillRect(0, 0, size, size);
+}
+}
+</script> </head> <body>
+<div style = "width:300px; height:125px; margin:0 auto; padding:5px;">
+<canvas id = "canvasArea" width = "300" height = "125"
+style = "border:2px solid black">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas> </div> </body> </html>

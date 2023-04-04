@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+    //Parametrs 
+    var interval = 40;   var intervalT = 70;
+    var intervalI = 5;   var intervalB = 5;
+    var radius = 10;     var radiusT = 25;
+    var radiusI = 5;     var radiusB = 5;
+    var frictionS = .01; var frictionB = 0;
+    var frictionL = 0; var frictionC = 0;
+    var frictionI = .01; var frictionT = .05;
+    var gravityS = .1; var gravityB = .0;
+    var gravityL = 0; var gravityC = 0;
+    var gravityI = .01; var gravityT = .2;
+    var accelerS = .03; var accelerB = .01;
+    var accelerL = 0; var accelerC = .001;
+    var accelerI = .01; var accelerT = .1;
+    var damping = .20; var dampingT = .50;
+    var dampingI = .10; var dampingB = 0;
+    var xVectorCur = 25; var yVectorCur = 10;
+    var ballXCur = 20; var ballYCur = 20;
+    var intervalID = 0;
+    var startAngle = (Math.PI/180)*0;
+    var endAngle = (Math.PI/180)*360;
+    var dragMouse = 0;    
+    
+    //Windows Load function
+    window.onload = function()
+    {
+        //Canvas contexts
+        canvasBL = document.getElementById("canvasBall");
+        contextBL = canvasBL.getContext("2d");
+        canvasBG = document.getElementById("canvasBackgroud");
+        contextBG = canvasBG.getContext("2d");
+        
+        // Mouse listeners
+        
+        canvasBL.addEventListener("mousedown", mouseDown, false);
+        canvasBL.addEventListener("mousemove", mouseMove, false);
+        canvasBL.addEventListener("mouseup", mouseUp, false);
+        
+        //bounce ball
+        bouncingBall(ballXCur, ballYCur, xVectorCur, yVectorCur);
+    }
+    
+    //Key functions
+    document.onkeydown = function(event){
+        // KEY code
+        var key = event.keyCode;
+        
+        // C2. RESTART using s key.
+        if (key == 83) {clearInterval(intervalID);
+        bouncingBall(ballXCur, ballYCur, xVectorCur, yVectorCur);
+        }
+        // C3. ACCELERATION change using the a key.
+        if (key == 65) {accelerS += accelerI;
+        if (accelerS > accelerT) {accelerS = accelerB};
+        clearInterval(intervalID);
+        bouncingBall(ballXCur, ballYCur, xVectorCur, yVectorCur);
+        }
+        // C4. GRAVITY change using the g key.
+        if (key == 71) {gravityS += gravityI;
+        if (gravityS > gravityT) {gravityS = gravityB};
+        clearInterval(intervalID);
+        bouncingBall(ballXCur, ballYCur, xVectorCur, yVectorCur);
+        }
+        // C5. FRICTION change using the f key.
+        if (key == 70) {frictionS += frictionI;
+        if (frictionS > frictionT) {frictionS = frictionB};
+        clearInterval(intervalID);
+        bouncingBall(ballXCur, ballYCur, xVectorCur, yVectorCur);
+        }
+        // C6. DAMPING change using the d key.
+        if (key == 68) {damping += dampingI;
+        if (damping > dampingT) {damping = dampingB};
+        clearInterval(intervalID);
+        bouncingBall(ballXCur, ballYCur, xVectorCur, yVectorCur);
+        }
+            if (key == 73) {interval += intervalI;
+            if (interval > intervalT) {interval = intervalB};
+            clearInterval(intervalID);
+            bouncingBall(ballXCur, ballYCur, xVectorCur, yVectorCur);
+            }
+            // C8. RADIUS change using the r key.
+            if (key == 82) {radius += radiusI;
+            if (radius > radiusT) {radius = radiusB};
+            clearInterval(intervalID);
+            bouncingBall(ballXCur, ballYCur, xVectorCur, yVectorCur);
+            }
+    } 
+    
+            // D. MOUSE DOWN.
+        function mouseDown(event)
+        {
+        // D1. MOUSE event.
+        mouseEvent(event);
+        // D2. DRAGGING on.
+        dragMouse = 1;
+                // D3. CLEAR canvas to show only moving ball.
+        contextBL.clearRect(0, 0, canvasBL.width, canvasBL.height);
+        clearInterval(intervalID);
+        // D4. DRAW ball.
+        contextBL.beginPath();
+        contextBL.arc(ballXCur, ballYCur, radius, startAngle, endAngle, true);
+        contextBL.closePath();
+        contextBL.fill();
+        }
+
+        // E. MOUSE MOVE.
+            function mouseMove(event)
+            {
+            // E1. DRAG check.
+            if (dragMouse == 1)
+            {
+            // E2. MOUSE event.
+            mouseEvent(event);
+            // E3. CLEAR canvas to show only moving ball.
+            contextBL.clearRect(0, 0, canvasBL.width, canvasBL.height);
+            clearInterval(intervalID);
+            // E4. DRAW ball.
+            contextBL.beginPath();
+            contextBL.arc(ballXCur, ballYCur, radius, startAngle, endAngle, true);
+            contextBL.closePath();
+            contextBL.fill();
+            }
+            }
+            
+            // F. MOUSE UP.
+            function mouseUp(event)
+            {
+            // F1. MOUSE event.
+            mouseEvent(event);
+            // F2. DRAGGING off.
+            dragMouse = 0;
+            // F3. BOUNCE bal.
+            clearInterval(intervalID);
+            bouncingBall(ballXCur, ballYCur, xVectorCur, yVectorCur);
+            }
+            // G. MOUSE EVENT.
+            function mouseEvent(event)
+            {
+            // G1. BROWSERS except Firefox.
+            if (event.x != undefined && event.y != undefined)
+            {
+            ballXCur = event.x;
+            ballYCur = event.y;
+            }
+            // G2. FIREFOX.
+            else
+            {
+            ballXCur = event.clientX + document.body.scrollLeft +
+            document.documentElement.scrollLeft;
+            ballYCur = event.clientY + document.body.scrollTop +
+            document.documentElement.scrollTop;
+            }
+            // G3. CURSOR position.
+            ballXCur -= canvasBL.offsetLeft;
+            ballYCur -= canvasBL.offsetTop;
+            }
+            
+            // H. BOUNCING BALL function.
+            function bouncingBall(ballX, ballY, xVector, yVector)
+            {
+            // H1. RESET VARIABLES.
+            frictionL = frictionS;
+            gravityL = gravityS;
+            accelerL = accelerS;
+            // H2. ATTRIBUTES of ball.
+            contextBL.shadowOffsetX = 3; contextBL.shadowOffsetY = 3;
+            contextBL.shadowBlur = 5; contextBL.shadowColor = "gray";
+            contextBL.fillStyle = "gold";
+            // H3. BACKGROUND Canvas with text.
+            background();
+            // H4. START DRAWING balls.
+            intervalID = setInterval(drawBall,interval);
+            // I. DRAW BALL function.
+            function drawBall()
+            {
+            // I1. MOVE ball.
+            moveBall();
+            // I2. CLEAR Canvas to show only moving ball.
+            contextBL.clearRect(0, 0, canvasBL.width, canvasBL.height);
+            // I3. DRAW ball.
+            contextBL.beginPath();
+            contextBL.arc(ballX, ballY, radius, startAngle, endAngle, true);
+            contextBL.closePath();
+            contextBL.fill();
+         // I4. SIDE BOUNCE.
+            if (ballX < radius || ballX > canvasBL.width-radius)
+            // I5. REVERSE x vector.
+            {xVector *= -1*(1-damping)}
+            // I6. CEILING & FLOOR BOUNCE.
+            if (ballY < radius || ballY > canvasBL.height-radius)
+            {
+            // I7. REVERSE y vector.
+            yVector *= -1*(1-damping);
+            // I8. FLOOR bounce check.
+            if((yVector < 0) && (yVector < -gravityL))
+            // I9. GRAVITY reduction.
+            {yVector += gravityL}
+            }
+            }
+            // J. MOVE BALL function.
+                function moveBall()
+                {
+                // J1. FRICTION adjustment.
+                frictionL = frictionL - frictionC;
+                if(frictionL < 0) {frictionL = 0}
+                // J2. ACCELERATION adjustment.
+                accelerL = accelerL - accelerC;
+                if(accelerL < 0) {accelerL = 0}
+                // J3. GRAVITY adjustments.
+                gravityL = gravityL - gravityC;
+                if(gravityL < 0) {gravityL = 0}
+                // J4. FRICTION & ACCELERATION factor.
+                faFactor = (1-frictionL) * (1+accelerL);
+                // J5. X VECTOR change.
+                xVector = xVector * faFactor;
+                // J6. X POSITION change.
+                ballX += xVector;
+                // J7. Y vector & coordinate change if ball is above floor.
+                if((ballY+radius) < canvasBL.height)
+                {
+                // J8. GRAVITY adjustment.
+                var adjGravityL = Math.min(gravityL, (canvasBL.height-ballY));
+            // J9. Y VECTOR change.
+            yVector = (yVector*faFactor) + adjGravityL;
+            }
+            // J10. Y POSITION change.
+            ballY += yVector;
+            // J11. BOUNDS check & adjustment.
+            if((ballX+(radius-1))>canvasBL.width) {ballX=(canvasBL.width-(radius-1))}
+            if((ballX-(radius-1))<0) {ballX=(radius-1)}
+            if((ballY+(radius-1))>canvasBL.height){ballY=(canvasBL.height-(radius-1))
+            if(yVector < (gravityL+radius)) {gravityL=.9*gravityL}}
+            if((ballY-(radius-1))<0) {ballY=(radius-1)}
+            }
+            // K. BACKGROUND.
+            
+            function background()
+{
+// K1. ATTRIBUTES.
+contextBG.font = "11pt courier";
+contextBG.textAlign = "left";
+contextBG.textBaseline = "middle";
+// K2. VARIABLES.
+var xPos1 = 15; var xPos2 = 175; var xPos3 = 275;
+var yPos = 20;
+// K3. COLOR FILL.
+contextBG.fillStyle = "silver";
+contextBG.fillRect(0, 0, canvasBG.width, canvasBG.height);
+// K4. FIX decimal points.
+accelerL = accelerL.toFixed(2); gravityL = gravityL.toFixed(2);
+frictionL = frictionL.toFixed(2); dampingL = damping;
+dampingL = dampingL.toFixed(2);
+// K5. TEXT.
+contextBG.fillStyle = "darkslategrey";
+contextBG.fillText("Key Factor", xPos1, yPos*1);
+contextBG.fillText("Value", xPos2, yPos*1);
+contextBG.fillText("--- -------------", xPos1, yPos*2);
+contextBG.fillText("-----", xPos2, yPos*2);
+contextBG.fillText("a - acceleration:", xPos1, yPos*3);
+contextBG.fillText(accelerL, xPos2, yPos*3);
+contextBG.fillText("g - gravity:", xPos1, yPos*4);
+contextBG.fillText(gravityL, xPos2, yPos*4);
+contextBG.fillText("f - friction:", xPos1, yPos*5);
+contextBG.fillText(frictionL, xPos2, yPos*5);
+contextBG.fillText("d - damping:", xPos1, yPos*6);
+contextBG.fillText(dampingL, xPos2, yPos*6);
+contextBG.fillText("i - interval:", xPos1, yPos*7);
+contextBG.fillText(interval, xPos2, yPos*7);
+contextBG.fillText("r - radius:", xPos1, yPos*8);
+contextBG.fillText(radius, xPos2, yPos*8);
+contextBG.fillText("s - start bounce", xPos1, yPos*9);
+contextBG.fillText("Press key to cycle", xPos3, yPos*1);
+contextBG.fillText("through factor", xPos3, yPos*2);
+contextBG.fillText("values.", xPos3, yPos*3);
+contextBG.fillText("Click, hold and drag", xPos3, yPos*5);
+contextBG.fillText("to move ball", xPos3, yPos*6);
+contextBG.fillText("starting position.", xPos3, yPos*7);
+}
+}
+    </script>
+    </head>
+<body>
+<div>
+<canvas id = "canvasBall" width = "500" height ="250"
+style = "border:2px solid black; position:absolute;
+left:auto; top:auto; z-index: 2">
+</canvas>
+<canvas id = "canvasBackground" width = "500" height ="250"
+style = "border:2px solid black; position:absolute;
+left:auto; top:auto; z-index: 1">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas>
+</div>
+</body>
+</html>

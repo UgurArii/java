@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Checking Four Checkboxes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function checkFour()
+        {
+            window.document.the_form.elements[0].checked = true;
+            window.document.the_form.elements[1].checked = true;
+            window.document.the_form.elements[2].checked = true;
+            window.document.the_form.elements[3].checked = true;
+        }
+    </script>
+    </head>
+<body>
+    <form name="the_form">
+        <input type="checkbox"/>One<br>
+        <input type="checkbox"/>Two<br>
+        <input type="checkbox"/>Three<br>
+        <input type="checkbox"/>Four<br>
+        <input type="button" value="check 'em" onclick="checkFour();"/><br>
+    </form>
+</body>
+</html>

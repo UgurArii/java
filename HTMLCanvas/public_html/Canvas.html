@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+        windows.onload = function()
+        {
+            canvas = document.getElementById("canvasArea");
+            context = canvas.getContext("2d");
+            
+            var numCircles = 300;
+            var maxRadius = 20;
+            var minRadius = 3;
+            var color = ["aqua", "black", "blue", "fuchsia", "green", "cyan", "lime",
+                "maroon", "navy", "olive", "purple", "red", "silver", "teal",
+"yellow", "azure", "gold", "bisque", "pink", "orange"];
+            var numColor = colors.length;
+            
+            canvas.width = 400;
+            canvas.height = 100;
+            context.scale(.7, .7);
+            
+            for(var n = 0; n<numCircles; n++){
+                var xPos = Math.random()*canvas.width;
+                var yPos = Math.random()*canvas.height;
+                var radius = minRadius+(Math.random()*(maxRadius-minRadius));
+                var colorIndex = Math.random()*(numColor-1);
+                colorIndex = Math.round(colorIndex);                
+                var color = color[colorIndex];
+                
+                drawCircle(context, xPos, yPos, radius, color);
+                              
+                
+            }
+            
+            
+        };
+        function  drawCircle(context, xPos, yPos, radius, color)
+        {
+            var startAngle = (Math.PI/180)*0;
+            var endAngle = (Math.PI/180)*360;
+            context.shadowOffsetX = 1;
+            context.shadowOffsetY = 1;
+            context.shadowBlur = 5;
+            
+            context.beginPath();
+            context.arc(xPos, yPos, radius, startAngle, endAngle, false);
+            context.fillStyle = color;
+            context.fill();
+        }
+        
+    </script>
+    </head>
+<body>
+   <div style = "width:200px; height:200px; margin:0 auto; padding:5px;">
+<canvas id = "canvasArea" width = "200" height = "200"
+style = "border:2px solid black">
+Your browser doesn’t currently support HTML5 Canvas.
+</div>
+</body>
+</html>

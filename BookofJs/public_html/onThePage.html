@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>How Long You've Been on the Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function setTimeSinceArriving(start_time, update_time)
+        {
+            if(start_time ==0)
+            {
+                start_time = getCurrentMillisecs();
+            }
+            
+            var millisecs = getCurrentMillisecs();
+            var milliSecondsOnPage = millisecs - start_time;
+            var secondsOnPage = Math.round(milliSecondsOnPage/1000);
+            document.timeForm.timeSince.value = secondsOnPage;
+            setTimeout("setTimeSinceArriving("+start_time+","+update_time+")",update_time);
+            
+            
+        }
+        function getCurrentMillisecs()
+        {
+            var now = new Date();
+            var millisecs = now.getTime();
+            return millisecs;
+        }
+        
+    </script>
+</head>
+<body onload="setTimeSinceArriving(0, 500)">
+    <form name="timeForm">
+        Seconds you have been on this page:
+        <input type="text" name="timeSince" size="10">
+    </form>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.homeController">
+   <children>
+      <AnchorPane prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: EE2B47;">
+         <children>
+            <JFXButton alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="130.0" prefHeight="40.0" prefWidth="230.0" text="Home" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="180.0" prefHeight="40.0" prefWidth="230.0" text="Add" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="230.0" prefHeight="40.0" prefWidth="230.0" text="Tickets" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="280.0" prefHeight="40.0" prefWidth="230.0" text="Settings" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="330.0" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="65.0" layoutY="27.0" text="MUV for Staff" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView fill="WHITE" glyphName="MENU" layoutX="206.0" layoutY="53.0" size="30" />
+            <Line endX="230.0" fill="WHITE" layoutX="10.0" layoutY="60.0" opacity="0.85" stroke="WHITE" strokeLineCap="ROUND" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tablepane" layoutX="267.0" layoutY="173.0" prefHeight="400.0" prefWidth="920.0" styleClass="tiles">
+         <children>
+            <AnchorPane layoutX="15.0" layoutY="295.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="110.0" style="-fx-background-color: #0278AE;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="28.0" text="Screen 3" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="15.0" layoutY="190.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="110.0" style="-fx-background-color: #0278AE;">
+               <children>
+                  <Label layoutX="10.0" layoutY="28.0" text="Screen 2" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <Bloom threshold="1.0" />
+               </effect>
+            </AnchorPane>
+            <AnchorPane layoutX="15.0" layoutY="85.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="110.0" style="-fx-background-color: #0278AE;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="28.0" text="Screen 1" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="slot1" layoutX="140.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #e8165e;" styleClass="tiles">
+               <children>
+                  <AnchorPane prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #bf124d;">
+                     <children>
+                        <Label layoutX="23.0" layoutY="8.0" text="1" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="slot1shadow" layoutX="60.0" prefHeight="50.0" prefWidth="1.0" style="-fx-background-color: #d71557;" />
+                  <Label layoutX="75.0" layoutY="10.0" text="12 To 3" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="slot2" layoutX="335.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #01bfdb;" styleClass="tiles">
+               <children>
+                  <AnchorPane prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #008fa4;">
+                     <children>
+                        <Label layoutX="23.0" layoutY="8.0" text="2" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="slot2shadow" layoutX="60.0" prefHeight="50.0" prefWidth="1.0" style="-fx-background-color: #00abc5;" />
+                  <Label layoutX="80.0" layoutY="10.0" text="3 To 6" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="slot4" layoutX="725.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #B61AAE;" styleClass="tiles">
+               <children>
+                  <AnchorPane prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #590D82;">
+                     <children>
+                        <Label layoutX="23.0" layoutY="8.0" text="4" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="slot4shadow" layoutX="60.0" prefHeight="50.0" prefWidth="1.0" style="-fx-background-color: #a3179c;" />
+                  <Label layoutX="75.0" layoutY="10.0" text="9 To 12" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="slot3" layoutX="530.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #EE712B;" styleClass="tiles">
+               <children>
+                  <AnchorPane prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #DC4712;">
+                     <children>
+                        <Label layoutX="23.0" layoutY="8.0" text="3" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="slot3shadow" layoutX="60.0" prefHeight="50.0" prefWidth="1.0" style="-fx-background-color: #ea6012;" />
+                  <Label layoutX="80.0" layoutY="10.0" text="6 To 9" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Line endX="680.0" layoutX="233.0" layoutY="70.0" startX="-100.0" stroke="#726b70" strokeWidth="1.5" />
+            <Line endX="680.0" layoutX="233.0" layoutY="184.0" startX="-100.0" stroke="#80777e" strokeWidth="0.6" />
+            <Line endX="680.0" layoutX="233.0" layoutY="289.0" startX="-100.0" stroke="#80777e" strokeWidth="0.6" />
+            <Line endX="680.0" layoutX="233.0" layoutY="390.0" startX="-100.0" stroke="#80777e" strokeWidth="0.6" />
+            <AnchorPane fx:id="b1" layoutX="140.0" layoutY="190.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #fc1919;" styleClass="tiles">
+               <children>
+                  <Label layoutX="150.0" layoutY="20.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="90.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="b2" layoutX="335.0" layoutY="85.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #A2C11C;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="16" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="113.0" prefHeight="90.0" prefWidth="67.0" style="-fx-background-color: #68AE00;" styleClass="tiles">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="15.0" layoutY="50.0" size="30" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="b11" layoutX="140.0" layoutY="295.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #fc1919;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="b1shadow1" layoutX="113.0" prefHeight="90.0" prefWidth="67.0" style="-fx-background-color: #da0202;" styleClass="tiles">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="15.0" layoutY="50.0" size="30" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="b12" layoutX="140.0" layoutY="85.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #fc1919;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="b1shadow2" layoutX="113.0" prefHeight="90.0" prefWidth="67.0" style="-fx-background-color: #da0202;" styleClass="tiles">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="15.0" layoutY="50.0" size="30" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="b21" layoutX="335.0" layoutY="190.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #A2C11C;">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="16" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="113.0" prefHeight="90.0" prefWidth="67.0" style="-fx-background-color: #68AE00;">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="15.0" layoutY="50.0" size="30" />
+                     </children>
+                     <effect>
+                        <Bloom threshold="1.0" />
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="b22" layoutX="335.0" layoutY="295.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #A2C11C;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="16" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="113.0" prefHeight="90.0" prefWidth="67.0" style="-fx-background-color: #68AE00;" styleClass="tiles">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="15.0" layoutY="50.0" size="30" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="b13" layoutX="530.0" layoutY="190.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #fc1919;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="b1shadow3" layoutX="113.0" prefHeight="90.0" prefWidth="67.0" style="-fx-background-color: #da0202;">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="15.0" layoutY="50.0" size="30" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="b111" layoutX="530.0" layoutY="295.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #fc1919;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="b1shadow11" layoutX="113.0" prefHeight="90.0" prefWidth="67.0" style="-fx-background-color: #da0202;">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="15.0" layoutY="50.0" size="30" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="b121" layoutX="530.0" layoutY="85.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #fc1919;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="b1shadow21" layoutX="113.0" prefHeight="90.0" prefWidth="67.0" style="-fx-background-color: #da0202;">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="15.0" layoutY="50.0" size="30" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="b23" layoutX="725.0" layoutY="85.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #A2C11C;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="16" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="113.0" prefHeight="90.0" prefWidth="67.0" style="-fx-background-color: #68AE00;">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="15.0" layoutY="50.0" size="30" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="b211" layoutX="725.0" layoutY="190.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #A2C11C;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="16" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="113.0" prefHeight="90.0" prefWidth="67.0" style="-fx-background-color: #68AE00;">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="15.0" layoutY="50.0" size="30" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="b221" layoutX="725.0" layoutY="295.0" onMouseEntered="#tileHover" onMouseExited="#tileExit" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: #A2C11C;" styleClass="tiles">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="16" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="5.0" text="Available Seats" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="113.0" prefHeight="90.0" prefWidth="67.0" style="-fx-background-color: #68AE00;">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="15.0" layoutY="50.0" size="30" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

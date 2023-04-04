@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Hi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.onload = function()
+        {
+            canvas = document.getElementById("canvasArea");
+            context = canvas.getContext("2d");
+            
+            var mText = "Hi!";
+            var xPos = canvas.width/2;
+            var yPos = canvas.height/2;
+            
+            context.font = "50pt Comic Sans MS";
+            context.fillStyle = "lime";
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+            
+            context.fillText(mText, xPos, yPos);
+        }
+    </script>
+</head>
+<body>
+<div style="width: 200px; height: 200px; margin:0 auto; padding: 5px;">
+    <canvas id="canvasArea"
+            width="200" height="200"
+        style="border:2px solid black">
+Your browser doesn’t currently support HTML5 Canvas.
+Please check www.caniuse.com/#feat=canvas for
+information on browser support for canvas.        
+    </canvas>
+    
+</div>
+</body>
+</html>

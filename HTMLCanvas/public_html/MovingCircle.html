@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+      // A. WINDOW LOAD function.
+        window.onload = function()
+        {
+        // A1. CANVAS definition variables.
+        canvasC = document.getElementById("canvasCircle");
+        contextC = canvasC.getContext("2d");
+        canvasBG = document.getElementById("canvasBackground");
+        contextBG = canvasBG.getContext("2d");
+        // A2. PARAMETERS.
+        var xPos = 50; var yPos = canvasC.height/2;
+        var radius = 40; var endXPos = canvasC.width-75;
+        var change = 10; var startAngle = (Math.PI/180)*0;
+        var interval = 80; var endAngle = (Math.PI/180)*360;
+        // A3. BACKGROUND canvas filled with color.
+        contextBG.fillStyle = "silver";
+        contextBG.fillRect(0,0,canvasBG.width,canvasBG.height);
+        // A4. INTERVAL for drawing.
+        var intervalID = setInterval(drawCircle,interval);
+            
+      function drawCircle()
+        {
+        // B1. CLEAR Canvas for each image.
+        // Note: Comment out to see all images.
+        //contextC.clearRect(0,0,canvasC.width,canvasC.height);
+        // B2. ATTRIBUTES of the circle.
+        contextC.strokeStyle =  "red"; contextC.lineWidth = 4;
+        contextC.shadowOffsetX = 3; contextC.shadowOffsetY = 3;
+        contextC.shadowBlur = 5; contextC.shadowColor = "gray";
+        // B3. POSITION change.
+        xPos += change;
+        // B4. STOP if reached end.
+        if(xPos > endXPos) {clearInterval(intervalID)};
+        // B5. DRAW circle.
+        contextC.beginPath();
+        contextC.arc(xPos, yPos, radius, startAngle, endAngle, true);
+        contextC.stroke();
+}
+        }
+    </script>
+</head>
+<body>
+<div>
+<!-- C. CANVAS ELEMENTS -->
+<canvas id = "canvasCircle" width = "400" height ="125"
+style = "border:2px solid black; position:absolute;
+left:auto; top:auto; z-index: 2">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas>
+<canvas id = "canvasBackground" width = "400" height ="125"
+style = "border:2px solid black; position:absolute;
+left:auto; top:auto; z-index: 1">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Dynamically Altering a Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function addSpouse(theRadio){
+            if(document.getElementById("newDiv") == null)
+            {
+                var newDiv = document.createElement("div");
+                newDiv.setAttribute("id","newDiv");
+                
+                var newInput = document.createElement("input");
+                newInput.setAttribute("type","text");
+                newInput.setAttribute("id","spouseText");
+                
+                var nameText = document.createTextNode(" Spouse's name");
+               
+                newDiv.appendChild(newInput);
+                newDiv.appendChild(nameText);
+                newDiv.appendChild(document.createElement("br"));
+                
+                var theForm = document.getElementById("myForm");
+                var theAddress = document.getElementById("address");
+                
+                theForm.insertBefore(newDiv, theAddress);
+            }
+        }
+        
+        function removeSpouse(theRadio){
+            if(document.getElementById("newDiv") != null)
+            {
+                var newDiv = document.getElementById("newDiv");
+                var theForm = document.getElementById("myForm");
+                myForm.removeChild(newDiv);
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" id="name">Your name<br>
+            Marital status:<br>
+        <input type="radio" onclick="removeSpouse(this);" name="ms">Single<br>
+            <input type="radio" onclick="addSpouse(this);" name="ms">Married<br>   
+                <input type="text" id="address">Your address<br>
+    </form>
+</body>
+</html>

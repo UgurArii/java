@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Reading XML Documents</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function getTranslations(the_word)
+        {
+            var languages = new Array("german","italian","portuguese");
+            for(var loop =0; loop<languages.length;loop++)
+            {
+                getTranslationsFromFile(languages[loop], the_word);
+            }
+        }
+        function getTranslationsFromFile(the_file, the_word)
+        {
+            var request = null;
+            var xml_response = null;
+            if(window.XMLHttpRequest){
+                request = new XMLHttpRequest();
+            }else if(window.ActiveXObject){
+                request = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            if(request){
+                request.open("GET",the_file +".xml");
+                request.onreadystatechange = function(){
+                    if(request.readyState == 4){
+                        xml_response = request.responseXML;
+                        document.getElementById(the_file).innerHTML =
+                                findTranslation(xml_response, the_word);
+                    }else{
+                        document.getElementById(the_file).innerHTML = "SEARCHING";
+                    }
+                }
+                request.send(null);
+            }else{
+                alert("Sorry, you must update your browser before seeing" + " Ajax in action");
+            }
+        }
+        
+        function findTranslation(xml_doc, the_word){
+            var the_translation = "unknown";
+            var this_word = "";
+            var this_english_element = null;
+            var english_word_elements =
+            xml_doc.getElementsByTagName("english");
+    
+            for (var loop = 0; loop < english_word_elements.length; loop++) {
+            this_english_element = english_word_elements[loop];
+            this_word = this_english_element.firstChild.nodeValue;
+            if (this_word == the_word) {
+                    the_translation =
+            this_english_element.nextSibling.firstChild.nodeValue;
+            }
+            }
+            return the_translation;
+            }
+    </script>
+</head>
+<body>
+    <form onsubmit="getTranslations(document.getElementById('theText').value);
+          return false;">
+        <input type="text" id="theText">
+            <input type="button"
+                   onclick="getTranslations(document.getElementById('theText').value); return false;" value="Translate">
+    </form>
+    <b>Portuguese:</b> <span id = "portuguese"></span><br>
+    <b>Italian:</b> <span id = "italian"></span ><br>
+    <b>German:</b> <span id = "german"></span ><br>
+</body>
+</html>

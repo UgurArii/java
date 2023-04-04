@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        var phone_book = new Array();
+        phone_book["blank"] = "";
+        phone_book["happy"] = "(555) 555-1111";
+        phone_book["happy"] = "(555) 555-1111";
+        phone_book["sleepy"] = "(555) 555-2222";
+        phone_book["sneezy"] = "(555) 555-3333";
+        phone_book["sleazy"] = "(555) 555-4444";
+        phone_book["sneery"] = "(555) 555-5555";
+        phone_book["bleary"] = "(555) 555-6666";
+        phone_book["tweaked"] = "(555) 555-7777";
+        
+        function displayNumber(the_phone_book, entry)
+        {
+            var the_number = the_phone_book[entry];
+            window.document.the_form.number_box.value = the_number;
+        }
+    </script>
+    </head>
+<body>
+    <h1>The Dwarves of Multimedia Gulch</h1>
+    <form name="the_form">
+        <b>Name:</b>
+        <select onchange="displayNumber(phone_book, this.options[this.selectedIndex].value);">
+            <option value = "blank">-- Choose a Dwarf --
+            <option value = "happy">Happy
+            <option value = "sleepy">Sleepy
+            <option value = "sneezy">Sneezy
+            <option value = "sleazy">Sleazy
+            <option value = "sneery">Sneery
+            <option value = "bleary">Bleary
+            <option value = "tweaked">Tweaked
+        </select>
+        <p> 
+            <b>Number:</b>
+        <input type="text" name="number_box" value="">
+    </form>
+</body>
+</html>

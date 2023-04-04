@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.onload = function(){
+            
+            canvas = document.getElementById("canvasArea");
+            context = canvas.getContext("2d"); 
+            
+            var xPos = 20; 
+            var yPos = 20; 
+            var gap = -20; 
+            var width = 80; 
+            var height = 80;
+            
+            context.shadowOffsetX = 4; 
+            context.shadowBlur = 3; 
+            context.shadowOffsetY = 4; 
+            context.shadowColor = "gray";
+            
+            context.globalAlpha = 1; 
+            context.fillStyle = "orange";
+            context.fillRect(xPos+(0*width)+(0*gap), yPos, width, height);
+            context.globalAlpha = .5;
+            context.fillStyle = "blue";
+            context.fiilRect(xPos+(1*width)+(1*gap), yPos, width, hheight);
+            context.globalAlpha = .25;
+            context.fillStyle = "red";
+            context.fiilRect(xPos+(2*width)+(2*gap), yPos, width, hheight);
+            context.globalAlpha = .25;
+            context.fillStyle = "limegreen";
+            context.fiilRect(xPos+(3*width)+(3*gap), yPos, width, hheight);
+            context.globalAlpha = .4;
+            context.fillStyle = "magenta";
+            context.fiilRect(xPos+(4*width)+(4*gap), yPos, width, hheight);
+            context.globalAlpha = .25;
+            context.fillStyle = "gold";
+            context.fiilRect(xPos+(5*width)+(5*gap), yPos, width, hheight);
+            context.globalAlpha = .4;
+            context.fillStyle = "turquoise";
+            context.fiilRect(xPos+(6*width)+(6*gap), yPos, width, hheight);
+            
+    
+    
+    }
+    </script>
+</head>
+<body>
+<div style = "width:490px; height:125px; margin:0 auto; padding:5px;">
+<canvas id = "canvasArea"
+width = "490" height = "125" style = "border:2px solid black">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas>
+</div>
+</body>
+</html>

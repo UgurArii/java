@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Arrays and Loops a la Ask.com</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body onload="scroll();">
+<script type="text/javascript">
+    var tips = new Array("Do not forget to comment your code."," Beware of infinite\n\
+loops","Program so that other humans can understand what you are doing.");
+
+    var num_tips = tips.length;
+    var index = 0;
+    
+    while((num_tips > 0) && (tips[num_tips-1] == ""))
+    {
+        --num_tips;
+    }
+    
+    function startScroll()
+    {
+        if(num_tips != null)
+        {
+            if(window.document.tips_form)
+            {
+                window.document.tips_form.tip_box.value = tips[index++];
+                if(index > num_tips -1)
+                {
+                    index = 0;
+                }
+                
+            }
+            setTimeout("startScroll()",3500);
+        }
+    }
+    </script>
+<form name="tips_form">
+    <textarea name="tip_box" row="3" cols ="30"></textarea>
+</form>
+</body>
+</html>

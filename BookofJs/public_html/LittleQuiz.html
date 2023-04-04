@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>A Little Quiz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+    function scoreQuiz()
+    {
+        var correct =0;
+        if(window.document.the_form.question1.checked == true)
+        {
+            correct = correct + 1;
+        }
+        if(window.document.the_form.question2.checked == true)
+        {
+            correct = correct + 1;
+        }
+        
+        if(window.document.the_form.question3.checked == false)
+        {
+            correct = correct + 1;
+        }
+        
+        alert("You got " + correct + " answers right!");
+    }
+    </script>
+</head>
+<body>
+    <h1>A Little Quiz</h1>
+    Check the statements which are true:
+    <form name="the_form">
+        <input type="checkbox" name="question1"/>All men are featherless bipeds<br>
+        <input type="checkbox" name="question2"/>All kangoroos are featherless bipeds<br>
+        <input type="checkbox" name="question3"/>All men are kangaroos<br>
+        <input type="button" value="score this quiz" onclick="scoreQuiz();" />
+    </form>
+</body>
+</html>

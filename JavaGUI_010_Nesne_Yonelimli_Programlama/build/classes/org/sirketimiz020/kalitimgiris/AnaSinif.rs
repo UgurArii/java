@@ -1,0 +1,2 @@
+org.sirketimiz020.kalitimgiris.CocukSinif
+org.sirketimiz020.kalitimgiris.AnaSinif

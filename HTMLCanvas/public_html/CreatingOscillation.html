@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+       window.onload = function()
+        {
+        // A1. CANVAS contexts.
+        canvasPlanet = document.getElementById("canvasPlanet");
+        contextPlanet = canvasPlanet.getContext("2d");
+        canvasBG = document.getElementById("canvasBackground");
+        contextBG = canvasBG.getContext("2d");
+        // A2. PARAMETERS.
+        var change = .6; var xPos = canvasPlanet.width/2;
+        var interval = 33; var yPos = canvasPlanet.height/2;
+        var radius = 0; var angle = 0;
+        var radiusMin = 100; var radiusMax = 175;
+        var numStars1 = 2000; var colorStar1 = "white";
+        var numStars2 = 400; var colorStar2 = "gray";
+        var numStars3 = 30; var colorStar3 = "darkgray";
+        var planetSize = 12; var sunSize = 45;
+        var imageCount = 0; var imageQuant = 2;
+        // A3. BACKGROUND Canvas color.
+        contextBG.fillStyle = "black";
+        contextBG.fillRect(0, 0, canvasBG.width, canvasBG.height);
+            
+         // A4. STARS drawing.
+            for(var n=0; n<numStars1; n++)
+            {
+            var xStar = Math.random()*canvasBG.width;
+            var yStar = Math.random()*canvasBG.height;
+            contextBG.fillStyle = colorStar2;
+            contextBG.fillRect(xStar, yStar, 1, 1);
+            }
+            for(var n=0; n<numStars2; n++)
+            {
+            var xStar = Math.random()*canvasBG.width;
+            var yStar = Math.random()*canvasBG.height;
+            contextBG.fillStyle = colorStar2;
+            contextBG.fillRect(xStar, yStar, 2, 2);
+            }
+            for(var n=0; n<numStars3; n++)
+            {
+            var xStar = Math.random()*canvasBG.width;
+            var yStar = Math.random()*canvasBG.height;
+            contextBG.fillStyle = colorStar3;
+            contextBG.fillRect(xStar, yStar, 3, 3);
+            }
+            // A5. IMAGE references.
+            var planet = new Image();   
+            planet.src = "http://marketimpacts.com/storage/Planet.png";
+            var sun = new Image();
+            sun.src = "http://marketimpacts.com/storage/Sun.png";
+            // B. SUN image load function.
+            sun.onload = function()
+            {
+            // B1. DRAW image.
+            contextBG.drawImage(sun, 200, 175, sunSize, sunSize);
+            // B2. COUNT increment.
+            imageCount ++;
+            // B3. CHECK for all images loaded.
+            if(imageCount == imageQuant)
+            // B4. ANIMATION start.
+            {var intervalID = setInterval(drawPlanet, interval)}
+            }
+            // C. PLANET image load function.
+            planet.onload = function()
+            {
+            // C1. TRANSLATE to rotation point.
+            contextPlanet.translate(xPos, yPos);
+            // C2. COUNT increment.
+            imageCount ++;
+            // C3. CHECK for all images loaded.
+            if(imageCount == imageQuant)
+            // C4. ANIMATION start.
+            {var intervalID = setInterval(drawPlanet, interval)}
+            }
+            // D. DRAW IMAGE function.
+            function drawPlanet()
+{
+        // D1. CLEAR Canvas for each image.
+        // Note: Comment out to see all images.
+        contextPlanet.clearRect(-canvasPlanet.width/2, -canvasPlanet.height/2,
+        canvasPlanet.width, canvasPlanet.height);
+        // D2. RADIUS calculation
+        var angleR = (Math.PI/180)*angle;
+        var calcAS = radiusMax * Math.sin(angleR);
+        var calcBC = radiusMin * Math.cos(angleR);
+        radius = (radiusMax * radiusMin) / Math.sqrt((calcAS*calcAS)+
+        (calcBC*calcBC));
+        // D3. ROTATE image.
+        contextPlanet.rotate(((Math.PI)/180)*-change);
+        angle = angle + change;
+        // D4. DRAW PLANET.
+        contextPlanet.drawImage(planet, radius, 0, planetSize,planetSize);
+}
+}
+    </script>
+</head>
+<body>
+<div>
+<canvas id = "canvasPlanet" width = "400" height ="400"
+style = "border:2px solid black; position:absolute;
+left:auto; top:auto; z-index: 2">
+</canvas>
+<canvas id = "canvasBackground" width = "400" height ="400"
+style = "border:2px solid black; position:absolute;
+left:auto; top:auto; z-index: 1">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas>
+</div>
+</body>
+</html>

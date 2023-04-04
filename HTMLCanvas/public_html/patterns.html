@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    // A. WINDOW LOAD function.
+window.onload = function()
+{
+// A1. CANVAS definition standard variables.
+canvas = document.getElementById("canvasArea");
+context = canvas.getContext("2d");
+// A2. IMAGE variables and sources.
+var smallImage = new Image();
+smallImage.src = "http://marketimpacts.com/storage/Strawberry50px.png";
+// B. PATTERN creation.
+smallImage.onload = function()
+{
+// B1. ATTRIBUTES.
+context.shadowOffsetX = 4; context.shadowOffsetY = 4;
+context.shadowBlur = 10; context.shadowColor = "lavender";
+// B2. REPEAT pattern variables.
+var repeatPattern = context.createPattern(smallImage, "repeat" );
+var noRepeatPattern = context.createPattern(smallImage, "no-repeat");
+var repeatXPattern = context.createPattern(smallImage, "repeat-x" );
+var repeatYPattern = context.createPattern(smallImage, "repeat-y" );
+// B3. PATTERN objects.
+context.fillStyle = repeatPattern;
+context.fillRect (125, 125, 325, 325);
+context.strokeRect (125, 125, 325, 325);
+context.fillStyle = noRepeatPattern;
+context.fillRect (0, 0, 100, 100);
+context.strokeRect (0, 0, 100, 100);
+context.fillStyle = repeatXPattern;
+context.fillRect (125, 0, 350, 100);
+context.strokeRect (125, 0, 350, 100);
+context.fillStyle = repeatYPattern;
+context.fillRect (0, 125, 100, 350);
+context.strokeRect (0, 125, 100, 350);
+}
+}
+</script>
+</head>
+<body>
+<div style = "width:500px; height:500px; margin:0 auto; padding:5px;">
+<canvas id = "canvasArea" width = "500" height = "500"
+style = "border:2px solid black">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas> </div>
+</body>
+</html>

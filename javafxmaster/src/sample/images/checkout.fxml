@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<!-- #B8124E; -->
+
+<AnchorPane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.checkoutController">
+   <children>
+      <AnchorPane fx:id="leftpane" prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: #AC005D;">
+         <children>
+            <Label layoutX="55.0" layoutY="29.0" text="MUV for Staff" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Line endX="230.0" fill="WHITE" layoutX="10.0" layoutY="60.0" opacity="0.85" stroke="WHITE" strokeLineCap="ROUND" />
+            <Label fx:id="userlabel" graphicTextGap="10.0" layoutX="20.0" layoutY="600.0" text="Logged in as: Najm Dost" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_CIRCLE" size="20" />
+               </graphic>
+            </Label>
+            <JFXButton fx:id="homebtn" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="130.0" onAction="#loadScene" onMouseEntered="#btnHover" onMouseExited="#btnExit" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Home" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="HOME" size="20" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="addbtn" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="180.0" onMouseEntered="#btnHover" onMouseExited="#btnExit" prefHeight="40.0" prefWidth="230.0" text="Add" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="20" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="moviescreensbtn" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="230.0" onAction="#loadScene" onMouseEntered="#btnHover" onMouseExited="#btnExit" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Movie Screens" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="MOVIE" size="20" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="logoutbtn" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="280.0" onAction="#logOut" onMouseEntered="#btnHover" onMouseExited="#btnExit" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="POWER" size="20" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="250.0" prefHeight="700.0" prefWidth="950.0">
+         <children>
+            <AnchorPane fx:id="toppane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="950.0" style="-fx-background-color: #AC005D;">
+               <children>
+                  <Label layoutX="429.0" layoutY="4.0" text="Payment" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="CREDIT_CARD" size="20">
+                           <fill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="WHITE" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </fill>
+                        </MaterialDesignIconView>
+                     </graphic>
+                  </Label>
+                  <HBox layoutX="845.0" prefHeight="35.0" prefWidth="100.0">
+                     <children>
+                        <JFXButton fx:id="minimisebtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#minimiseWindow" prefHeight="35.0" prefWidth="35.0" ripplerFill="WHITE" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="MINUS" size="20" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="maximisebtn" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" ripplerFill="WHITE">
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_RESTORE" size="20" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="closebtn" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleClose" prefHeight="35.0" prefWidth="35.0" ripplerFill="WHITE">
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" size="24" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="5.0" layoutY="36.0" prefHeight="661.0" prefWidth="945.0" styleClass="tiles">
+               <children>
+                  <AnchorPane layoutX="464.0" layoutY="15.0" prefHeight="600.0" prefWidth="441.0" styleClass="tiles">
+                     <children>
+                        <JFXButton fx:id="completeButton" layoutX="49.0" layoutY="435.0" onAction="#handlePayment" style="-fx-background-color: #008000;" text="Complete Purchase" textFill="WHITE">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="CART" size="40" />
+                           </graphic>
+                        </JFXButton>
+                        <Label layoutX="28.0" layoutY="6.0" prefHeight="47.0" prefWidth="135.0" text="Review">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="section1" layoutX="42.0" layoutY="84.0" prefHeight="25.0" prefWidth="230.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="price1" layoutX="317.0" layoutY="84.0" prefHeight="17.0" prefWidth="110.0" text="9.50£">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="section2" layoutX="42.0" layoutY="122.0" prefHeight="25.0" prefWidth="230.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="price2" layoutX="317.0" layoutY="122.0" prefHeight="17.0" prefWidth="110.0" text="8.50£">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="section3" layoutX="42.0" layoutY="161.0" prefHeight="25.0" prefWidth="230.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="price3" layoutX="317.0" layoutY="161.0" prefHeight="17.0" prefWidth="110.0" text="10.00£">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="44.0" layoutY="333.0" prefHeight="17.0" prefWidth="110.0" text="Total">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalField" layoutX="268.0" layoutY="333.0" onContextMenuRequested="#handlePayment" prefHeight="38.0" prefWidth="110.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Line endX="220.0" layoutX="143.0" layoutY="383.0" startX="-100.0" />
+                        <Label fx:id="section4" layoutX="42.0" layoutY="202.0" prefHeight="25.0" prefWidth="230.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="price4" layoutX="317.0" layoutY="202.0" prefHeight="17.0" prefWidth="110.0" text="9.00£">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <JFXTabPane fx:id="tabPane" layoutX="15.0" layoutY="15.0" prefHeight="600.0" prefWidth="441.0">
+                     <tabs>
+                        <Tab fx:id="cardTab" text="Card Payment">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="210.0" prefWidth="441.0">
+                                 <children>
+                                    <Label layoutX="12.0" layoutY="14.0" prefHeight="47.0" prefWidth="388.0" text="Personal Information">
+                                       <font>
+                                          <Font size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField fx:id="fnField" labelFloat="true" layoutX="40.0" layoutY="95.0" prefHeight="25.0" prefWidth="121.0" promptText="First Name" />
+
+                                    <JFXTextField fx:id="lnField" labelFloat="true" layoutX="248.0" layoutY="96.0" prefHeight="25.0" prefWidth="121.0" promptText="Last Name" />
+                                    <JFXTextField fx:id="emailField" labelFloat="true" layoutX="40.0" layoutY="150.0" prefHeight="25.0" prefWidth="331.0" promptText="Email" />
+                                    <JFXTextField fx:id="mobileField" labelFloat="true" layoutX="40.0" layoutY="204.0" prefHeight="25.0" prefWidth="331.0" promptText="Mobile" />
+                                    <Label layoutX="14.0" layoutY="265.0" prefHeight="47.0" prefWidth="372.0" text="Payment Details">
+                                       <font>
+                                          <Font size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField fx:id="cardField" layoutX="37.0" layoutY="367.0" prefHeight="25.0" prefWidth="331.0" promptText="0000 - 0000 - 0000 - 0000" />
+                                    <Label layoutX="38.0" layoutY="333.0" prefHeight="25.0" prefWidth="163.0" text="Credit Card Number">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField fx:id="codeField" layoutX="36.0" layoutY="440.0" prefHeight="25.0" prefWidth="121.0" promptText="***" />
+                                    <Label layoutX="37.0" layoutY="416.0" prefHeight="25.0" prefWidth="163.0" text="Security Code">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField fx:id="dateField" layoutX="244.0" layoutY="441.0" prefHeight="25.0" prefWidth="121.0" promptText="MM/YY" />
+                                    <Label layoutX="245.0" layoutY="417.0" prefHeight="25.0" prefWidth="163.0" text="Expiration Date">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <MaterialDesignIconView glyphName="CREDIT_CARD" layoutX="347.0" layoutY="391.0" opacity="0.57" size="20.0" />
+                                    <Label fx:id="cardMsgLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="479.0" prefHeight="58.0" prefWidth="362.0" textAlignment="CENTER" textFill="#d7110a" visible="false">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXSpinner fx:id="spinner" layoutX="178.0" layoutY="515.0" visible="false" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab fx:id="cashTab" text="Cash Payment">
+                          <content>
+                            <AnchorPane layoutY="15.0" prefHeight="0.0" prefWidth="434.0">
+                                 <children>
+                                    <Label layoutX="13.0" layoutY="14.0" prefHeight="47.0" prefWidth="392.0" text="Amount Recieved">
+                                       <font>
+                                          <Font size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField fx:id="cashField" alignment="CENTER" layoutX="103.0" layoutY="79.0" prefHeight="85.0" prefWidth="212.0" promptText="£££">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <Label layoutX="14.0" layoutY="294.0" prefHeight="47.0" prefWidth="135.0" text="Change:">
+                                       <font>
+                                          <Font size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="changeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="368.0" prefHeight="47.0" prefWidth="393.0" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

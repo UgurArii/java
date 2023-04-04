@@ -1,0 +1,59 @@
+<!DOCTYPE HTML> <html> <head> <script>
+// A. WINDOW LOAD function.
+window.onload = function()
+{
+// A1. CANVAS definition standard variables.
+canvas = document.getElementById("canvasArea");
+context = canvas.getContext("2d");
+// A2. PARAMETERS for circles.
+var numCircles = 300;
+var maxRadius = 20; var minRadius = 3;
+var colors =
+["aqua", "black", "blue", "fuchsia", "green", "cyan", "lime",
+"maroon", "navy", "olive", "purple", "red", "silver", "teal",
+"yellow", "azure", "gold", "bisque", "pink", "orange"];
+var numColors = colors.length;
+// A3. RESIZE & RESCALE Canvas.
+canvas.width = 400; canvas.height = 100;
+context.scale(.7, .7);
+// A4. CREATE circles.
+for(var n=0; n<numCircles; n++)
+{
+// A5. RANDOM values for circle characteristics.
+var xPos = Math.random()*canvas.width;
+var yPos = Math.random()*canvas.height;
+var radius = minRadius+(Math.random()* (maxRadius-minRadius));
+var colorIndex = Math.random()*(numColors-1);
+colorIndex = Math.round(colorIndex);
+var color = colors[colorIndex];
+// A6. DRAW circle.
+drawCircle(context, xPos, yPos, radius, color);
+}
+};
+// B. CIRCLE drawing function.
+function drawCircle(context, xPos, yPos, radius, color)
+{
+//B1. PARAMETERS for shadow and angles.
+var startAngle = (Math.PI/180)*0;
+var endAngle = (Math.PI/180)*360;
+context.shadowColor = "gray";
+context.shadowOffsetX = 1;
+context.shadowOffsetY = 1;
+context.shadowBlur = 5;
+//B2. DRAW CIRCLE
+context.beginPath();
+context.arc(xPos, yPos, radius, startAngle, endAngle, false);
+context.fillStyle = color;
+context.fill();
+}
+</script> </head> <body>
+<!-- C. CANVAS definition -->
+<div style = "width:200px; height:200px; margin:0 auto; padding:5px;">
+<canvas id = "canvasArea" width = "200" height = "200"
+style = "border:2px solid black">
+Your browser doesn’t currently support HTML5 Canvas.
+</canvas>
+</div>
+
+</body>
+</html>

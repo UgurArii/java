@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function attachHandlers(){
+            var theElements = document.getElementById("myForm").childNodes;
+            for(var loop = 0; loop < theElements.length; loop++)
+            {
+                if((theElements[loop].nodeName == "input") ||
+                        (theElements[loop].nodeName == "INPUT"))
+                {
+                    theElements[loop].onclick = doAlert;
+                }
+            }
+        }
+        
+        function doAlert(evt)
+        {
+            var thisBox;
+            if(!evt){
+                evt=event;
+                thisBox = evt.srcElement;
+            }else{
+                thisBox = evt.target;
+            }
+            alert("You clicked on" + thisBox.name);
+        }
+    </script>
+    </head>
+    <body onload="attachHandlers();">
+        <form id="myForm">
+            <input type = "checkbox" name = "1">
+                <input type = "checkbox" name = "2">
+            <input type = "checkbox" name = "3"><br>
+            <input type = "checkbox" name = "4">
+                <input type = "checkbox" name = "5">
+            <input type = "checkbox" name = "6"><br>
+        </form>
+</body>
+</html>

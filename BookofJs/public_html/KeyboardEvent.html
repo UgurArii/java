@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+       function displayEvent(evt) {
+var type = evt.type;
+var code = evt.keyCode;
+var theChar = String.fromCharCode(code);
+var alt = evt.altKey;
+var ctrl = evt.ctrlKey;
+var shift = evt.shiftKey;
+var displayString = "event type: " + type + "; key code: " + code +
+", which is the character " + theChar +
+"; ALT, CTRL, and SHIFT were: " +
+alt + ", " + ctrl + ", and " + shift + "\n\n";
+if ((code >= 65) && (code <= 90)) {
+document.getElementById("showEvents").value += displayString;
+}
+}
+//
+    </script>
+</head>
+<body>
+    <form>
+        Type here: <input type="text" onkeydown="displayEvent(event);" onkeyup = "displayEvent(event);"><br>
+            See the events here:<textarea id="showEvents" cols="80" rows="20">
+                
+            </textarea>
+    </form>
+</body>
+</html>

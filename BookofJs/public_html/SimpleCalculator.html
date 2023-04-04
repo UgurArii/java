@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function multiplyTheFields()
+        {
+            var number_one = window.document.the_form.field_one.value;
+            var number_two = window.document.the_form.field_two.value;
+            var product = number_one * number_two;
+            alert(number_one + " times " + number_two + " is: " + product);
+        }
+    </script>
+    <script type = "text/javascript">
+<!-- hide me from older browsers
+function multiplyTheFieldss()
+{
+var number_one = window.document.the_formm.field_one.value;
+var number_two = window.document.the_formm.field_two.value;
+var product = number_one * number_two;
+window.document.the_formm.the_answer.value = product;
+}
+</script>
+</head>
+<body>
+    <form name="the_form">
+        Number 1:<input type="text" name="field_one"/><br>
+        Number 2:<input type="text" name="field_two"/><br>
+        <a href="#" onclick="multiplyTheFields(); return false;">Multiply them</a>
+    </form>
+    <form name = "the_formm">
+Number 1: <input type = "text" name = "field_one"> <br>
+Number 2: <input type = "text" name = "field_two"> <br>
+    The Product: <input type = "text" name = "the_answer"> <br>
+        <a href = "#" onClick = "multiplyTheFieldss(); return false;">Multiply them!</a>
+</form>
+</body>
+</html>

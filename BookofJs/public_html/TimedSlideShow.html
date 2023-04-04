@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        var the_images = new Array();
+        the_images[0] = new Image();
+        the_images[0].src = "one.jpg";
+         the_images[1] = new Image();
+        the_images[1].src = "two.jpg";
+         the_images[2] = new Image();
+        the_images[2].src = "three.jpg";
+        
+        var the_timeout;
+        var index = 0;
+        
+        function rotateImage()
+        {
+            window.document.my_image.src = the_images[index].src;
+            index++;
+            if(index >= the_images.length)
+            {
+                index = 0;
+            }
+            the_timeout = setTimeout("rotateImage();", 5000);
+        }
+    </script>
+    </head>
+<body>
+<img name="my_image" src="one.jpg"> 
+    <form>
+        <input type="button" value = "Start the Slow" onclick="clearTimeout(the_timeout); rotateImage();"/>
+        <input type="button" value="Stop the Show" onclick="clearTimeout(the_timeout);">
+    </form>
+</body>
+</html>
